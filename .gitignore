@@ -48,3 +48,7 @@ e2e.db
 
 # playwright
 test-results
+
+# private profile
+my-resume.md
+my-profile.md
