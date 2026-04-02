@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const socialLinks = [
   { href: "https://github.com/hanfangyuan4396", label: "GitHub" },
@@ -35,7 +36,28 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-6 border-t pt-4 text-center text-xs text-muted-foreground">
-          © {year} 方圆 · Powered by Next.js
+          <p>© {year} 方圆 · Powered by Next.js</p>
+          <p className="mt-3">
+            <Link
+              href="https://beian.mps.gov.cn/#/query/webSearch?code=11010802039582"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 transition-colors hover:text-foreground"
+            >
+              <Image src="/beian.png" alt="公安备案图标" width={18} height={18} />
+              京公网安备 11010802039582号
+            </Link>
+          </p>
+          <p className="mt-2">
+            <Link
+              href="https://beian.miit.gov.cn/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-foreground"
+            >
+              京ICP备2022015055号-2
+            </Link>
+          </p>
         </div>
       </div>
     </footer>

@@ -37,4 +37,14 @@ describe("<Footer />", () => {
     const year = new Date().getFullYear();
     expect(screen.getByText(new RegExp(String(year)))).toBeInTheDocument();
   });
+
+  it("renders filing information", () => {
+    render(<Footer />);
+    expect(screen.getByAltText("公安备案图标")).toBeInTheDocument();
+    expect(screen.getByText("京公网安备 11010802039582号")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "京ICP备2022015055号-2" })).toHaveAttribute(
+      "href",
+      "https://beian.miit.gov.cn/"
+    );
+  });
 });

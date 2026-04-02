@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
@@ -10,9 +11,10 @@ import { ThemeToggle } from "./theme-toggle";
 
 const navLinks = [
   { href: "/", label: "首页" },
+  { href: "/services", label: "服务" },
   { href: "/projects", label: "项目" },
   { href: "/blog", label: "博客" },
-  { href: "/about", label: "关于" },
+  { href: "/about", label: "关于我" },
 ];
 
 export function Navbar() {
@@ -24,9 +26,19 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link
           href="/"
-          className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-lg font-bold tracking-tight text-transparent"
+          className="inline-flex items-center gap-2"
         >
-          方圆
+          <Image
+            src="/wechat_avatar.jpg"
+            alt="wechat-avatar"
+            width={28}
+            height={28}
+            unoptimized
+            className="h-7 w-7 shrink-0 rounded-full object-cover ring-1 ring-border"
+          />
+          <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-lg font-bold tracking-tight text-transparent">
+            方圆AI分享
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-6 text-sm font-medium sm:flex">

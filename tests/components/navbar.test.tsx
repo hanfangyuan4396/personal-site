@@ -20,7 +20,8 @@ afterEach(() => {
 describe("<Navbar />", () => {
   it("renders logo", () => {
     render(<Navbar />);
-    expect(screen.getByText("方圆")).toBeInTheDocument();
+    expect(screen.getByText("方圆AI分享")).toBeInTheDocument();
+    expect(screen.getByAltText("wechat-avatar")).toBeInTheDocument();
   });
 
   it("renders all nav links", () => {
@@ -28,7 +29,7 @@ describe("<Navbar />", () => {
     expect(screen.getAllByRole("link", { name: "首页" }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: "项目" }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: "博客" }).length).toBeGreaterThan(0);
-    expect(screen.getAllByRole("link", { name: "关于" }).length).toBeGreaterThan(0);
+    expect(screen.getAllByRole("link", { name: "关于我" }).length).toBeGreaterThan(0);
   });
 
   it("highlights active link for home route", () => {
