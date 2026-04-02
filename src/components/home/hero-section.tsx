@@ -104,7 +104,8 @@ export function HeroSection() {
             </div>
 
             <p className="max-w-xl text-base leading-relaxed text-muted-foreground md:max-w-2xl">
-              AI 开源项目 3k+ Stars · 智能体开发 · AI 技术顾问 · AI 编程，分享 AI 知识！
+              智能体开发实践者，Dify-on-WeChat 开源项目作者。曾参与 LLMOps 平台核心能力建设，
+              也作为 AI 技术顾问推动企业 AI 应用落地，持续分享 AI 编程实践与产品思考。
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 md:justify-start">

@@ -45,7 +45,7 @@ export const timelineItems = [
   },
   {
     date: "2022.06 – 2022.09",
-    title: "前端开发实习",
+    title: "前端开发实习 · 美团",
     description: "测试工具链部门，参与内部系统前端开发（Vue），完成十余个需求上线",
     type: "work" as const,
   },

@@ -22,7 +22,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "方圆 - 全栈开发 · AI 工程师 · 开源作者",
-  description: "我是方圆，AI开源项目3k+Stars / 智能体开发 / AI技术顾问 / AI编程，分享AI知识!",
+  description:
+    "智能体开发实践者，Dify-on-WeChat 开源项目作者，曾参与 LLMOps 平台核心能力建设，也作为 AI 技术顾问推动企业 AI 应用落地。",
 };
 
 export default async function RootLayout({
