@@ -2,11 +2,11 @@
   "nav": {
     "home": "首页",
     "studentsManagement": "学生管理",
-    "siteName": "fastapi-nextjs-template",
+    "siteName": "personal-site",
     "logout": "退出"
   },
   "footer": {
-    "copyright": "© {year} fastapi-nextjs-template",
+    "copyright": "© {year} personal-site",
     "poweredBy": "Powered by Next.js · FastAPI · shadcn/ui"
   },
   "common": {

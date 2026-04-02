@@ -1,6 +1,6 @@
 services:
   web:
-    image: registry.cn-hangzhou.aliyuncs.com/hanfangyuan/nextjs-template-web:main
+    image: registry.cn-hangzhou.aliyuncs.com/hanfangyuan/personal-site:main
     pull_policy: always
     env_file:
       - .env

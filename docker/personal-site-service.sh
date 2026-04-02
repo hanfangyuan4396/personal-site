@@ -1,8 +1,8 @@
 #!/bin/bash
 #====================================================================
-# nextjs-template 服务部署脚本
+# personal-site 服务部署脚本
 # 功能：管理 Next.js Web 服务
-# 用法：./nextjs-template-service.sh [操作]
+# 用法：./personal-site-service.sh [操作]
 # 操作：
 #   start   - 启动服务
 #   stop    - 停止服务
@@ -12,7 +12,7 @@
 
 # 显示帮助信息函数
 show_help() {
-  echo "用法: ./nextjs-template-service.sh [操作]"
+  echo "用法: ./personal-site-service.sh [操作]"
   echo "操作:"
   echo "  start   - 启动服务"
   echo "  stop    - 停止服务"
@@ -20,9 +20,9 @@ show_help() {
   echo "  -h      - 显示此帮助信息"
   echo ""
   echo "示例:"
-  echo "  ./nextjs-template-service.sh start  # 启动服务"
-  echo "  ./nextjs-template-service.sh stop   # 停止服务"
-  echo "  ./nextjs-template-service.sh logs   # 查看服务日志"
+  echo "  ./personal-site-service.sh start  # 启动服务"
+  echo "  ./personal-site-service.sh stop   # 停止服务"
+  echo "  ./personal-site-service.sh logs   # 查看服务日志"
 }
 
 # 如果没有提供操作参数或请求帮助，显示帮助信息
@@ -33,7 +33,7 @@ fi
 
 # 设置操作
 OPERATION=$1
-PROJECT_NAME="nextjs-template"
+PROJECT_NAME="personal-site"
 COMPOSE_FILE="docker-compose.yaml"
 
 # 执行相应的操作

@@ -1,5 +1,5 @@
 {
-  "title": "fastapi-nextjs-template",
+  "title": "personal-site",
   "subtitle": "一个基于 Next.js 与 FastAPI 的全栈模板，开箱即用。",
   "description": "内置「学生管理」示例，涵盖查询、分页与表单新增；集成 App Router、国际化与 UI 组件。内置格式检查与接口测试工作流，AI 开发友好。通过上方导航进入示例页面体验。",
   "stack": {

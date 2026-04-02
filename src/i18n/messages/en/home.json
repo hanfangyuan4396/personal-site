@@ -1,5 +1,5 @@
 {
-  "title": "fastapi-nextjs-template",
+  "title": "personal-site",
   "subtitle": "A full-stack template built with Next.js and FastAPI, ready to use.",
   "description": "Includes a Students demo covering query, pagination and create form; integrates App Router, i18n and UI components. Built-in linting and API tests, AI-friendly development. Use the navigation above to explore.",
   "stack": {

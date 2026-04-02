@@ -63,7 +63,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            ${{ vars.ALIYUN_REGISTRY || 'registry.cn-hangzhou.aliyuncs.com' }}/${{ vars.PROJ_WEB_IMAGE_NAME || 'hanfangyuan/nextjs-template-web' }}
+            ${{ vars.ALIYUN_REGISTRY || 'registry.cn-hangzhou.aliyuncs.com' }}/${{ vars.PROJ_WEB_IMAGE_NAME || 'hanfangyuan/personal-site' }}
 
       - name: Build and push Web Docker image
         uses: docker/build-push-action@v6

@@ -1,4 +1,4 @@
-# nextjs-template
+# personal-site
 
 # 项目说明
 
@@ -12,16 +12,16 @@
 | `ALIYUN_REGISTRY_USER` | Secret | `build-push.yaml` | 是 | 无 | 阿里云镜像仓库登录用户名。 |
 | `ALIYUN_REGISTRY_PWD` | Secret | `build-push.yaml` | 是 | 无 | 阿里云镜像仓库登录密码 / Access Key。 |
 | `ALIYUN_REGISTRY` | Variable | `build-push.yaml` | 否 | `registry.cn-hangzhou.aliyuncs.com` | 镜像仓库地址（含 region）。 |
-| `PROJ_WEB_IMAGE_NAME` | Variable | `build-push.yaml` | 否 | `hanfangyuan/nextjs-template-web` | Web 镜像名称（不含 registry）。 |
+| `PROJ_WEB_IMAGE_NAME` | Variable | `build-push.yaml` | 否 | `hanfangyuan/personal-site` | Web 镜像名称（不含 registry）。 |
 | `SERVER_SSH_USER` | Secret | `deploy.yaml` | 是 | 无 | 目标服务器 SSH 用户名。 |
 | `SERVER_SSH_KEY` | Secret | `deploy.yaml` | 是 | 无 | 目标服务器 SSH 私钥。 |
 | `SERVER_SSH_HOST` | Variable | `deploy.yaml` | 是 | 无 | 目标服务器主机名或 IP（`deploy.yaml` 无默认值）。 |
-| `SERVER_SSH_SCRIPT` | Variable | `deploy.yaml` | 否 | `cd services/nextjs-template/docker && ./nextjs-template-service.sh start && docker image prune -af` | 在服务器上执行的部署脚本命令。 |
+| `SERVER_SSH_SCRIPT` | Variable | `deploy.yaml` | 否 | `cd services/personal-site/docker && ./personal-site-service.sh start && docker image prune -af` | 在服务器上执行的部署脚本命令。 |
 
 ## 初始化记录
 
 ```bash
-npx create-next-app@latest nextjs-template \
+npx create-next-app@latest personal-site \
   --ts \
   --app \
   --eslint \
