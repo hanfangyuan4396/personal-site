@@ -34,7 +34,7 @@ export function TimelineSection() {
     <section id="timeline" className="border-t border-blue-500/10 py-16 sm:py-24">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <div className="mb-12">
-          <h2 className="text-2xl font-bold sm:text-3xl">职业历程</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl">成长轨迹</h2>
           <p className="mt-2 text-muted-foreground">我走过的路</p>
         </div>
 

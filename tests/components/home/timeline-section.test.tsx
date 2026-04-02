@@ -10,7 +10,7 @@ afterEach(() => {
 describe("<TimelineSection />", () => {
   it("renders timeline heading", () => {
     render(<TimelineSection />);
-    expect(screen.getByText("职业历程")).toBeInTheDocument();
+    expect(screen.getByText("成长轨迹")).toBeInTheDocument();
   });
 
   it("renders descriptions as bullet points", () => {

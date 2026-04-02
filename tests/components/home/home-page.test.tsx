@@ -13,7 +13,7 @@ describe("<HomePage />", () => {
 
     const projectsHeading = screen.getByRole("heading", { name: "精选项目", level: 2 });
     const skillsHeading = screen.getByRole("heading", { name: "技能专长", level: 2 });
-    const timelineHeading = screen.getByRole("heading", { name: "职业历程", level: 2 });
+    const timelineHeading = screen.getByRole("heading", { name: "成长轨迹", level: 2 });
     const contactHeading = screen.getByRole("heading", { name: "联系我", level: 2 });
 
     expect(projectsHeading.compareDocumentPosition(skillsHeading)).toBe(
