@@ -6,9 +6,9 @@ import { getMessages, getLocale } from "next-intl/server";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { NotificationProvider } from "@/providers/notification-provider";
+import { ThemeProvider } from "@/components/theme-provider";
 
 import "./globals.css";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,8 +21,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "fastapi-nextjs-template",
-  description: "基于 Next.js 与 FastAPI 的全栈模板",
+  title: "方圆 - 全栈开发 · AI 工程师 · 开源作者",
+  description: "我是方圆，AI开源项目3k+Stars / 智能体开发 / AI技术顾问 / AI编程，分享AI知识!",
 };
 
 export default async function RootLayout({
@@ -30,21 +30,22 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // 获取当前语言和翻译消息
   const locale = await getLocale();
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased`}
       >
-        <NextIntlClientProvider messages={messages}>
-          <NotificationProvider />
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </NextIntlClientProvider>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <NextIntlClientProvider messages={messages}>
+            <NotificationProvider />
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -52,3 +52,7 @@ test-results
 # private profile
 my-resume.md
 my-profile.md
+reference-site.md
+
+.codex
+card.html

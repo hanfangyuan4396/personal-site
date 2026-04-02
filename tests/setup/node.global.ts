@@ -8,6 +8,7 @@ import type { TestProject } from "vitest/node";
 // 之所以放在 globalSetup 而不是 setupFiles：
 // setupFiles 会在并行 worker/多个测试文件中重复执行，可能导致 SQLite 并发 migrate 时出现 "database is locked"。
 export default function globalSetup(_project: TestProject) {
+  void _project;
   process.env.DATABASE_URL ??= "file:./test.db";
 
   execSync("npx prisma migrate deploy", {
