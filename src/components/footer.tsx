@@ -4,7 +4,7 @@ import { ContactChannelIcon, ZsxqIcon } from "@/components/shared/contact-channe
 import { footerRoleLabels } from "@/data/home-hero";
 
 const footerContactIconLinkClass =
-  "inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-card/80 text-muted-foreground transition-colors hover:border-blue-500/40 hover:text-blue-400";
+  "inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-card/80 text-muted-foreground transition-colors hover:border-blue-400/50 hover:bg-blue-50/80 hover:text-blue-600 dark:hover:border-blue-500/40 dark:hover:bg-blue-500/10 dark:hover:text-blue-400";
 
 const ZSXQ_COUPON_SECTION = "/services#zsxq-coupon";
 
@@ -12,7 +12,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-blue-500/10 bg-background">
+    <footer className="border-t border-blue-200/60 bg-gradient-to-b from-transparent to-blue-50/30 dark:border-blue-500/10 dark:bg-background">
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start md:gap-12 lg:gap-16">
           <div>

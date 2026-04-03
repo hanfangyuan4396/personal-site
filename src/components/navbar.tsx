@@ -75,7 +75,7 @@ export function Navbar() {
           </Link>
           <ThemeToggle />
           <button
-            className="sm:hidden"
+            className="rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-blue-500/10 dark:hover:text-blue-400 sm:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="切换菜单"
           >

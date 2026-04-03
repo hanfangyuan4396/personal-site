@@ -91,12 +91,6 @@ export default function BlogPage() {
         </Button>
       </div>
 
-      <div className="mt-12 rounded-xl border border-cyan-200/80 bg-gradient-to-r from-blue-50/90 to-cyan-50/80 px-6 py-8 text-center shadow-[0_8px_24px_rgba(34,211,238,0.08)] dark:border-cyan-500/20 dark:from-blue-950/20 dark:to-cyan-950/10 dark:shadow-none">
-        <p className="font-semibold">关注公众号「方圆AI分享」</p>
-        <p className="mt-2 text-sm text-muted-foreground">
-          不定期分享 AI 编程实践、开源工具与个人思考
-        </p>
-      </div>
     </div>
   );
 }

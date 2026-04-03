@@ -68,13 +68,13 @@ export function WechatMpQrTrigger({ wechatMp, linkClassName }: WechatMpQrTrigger
             }
           }}
         >
-          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-border bg-card transition-colors group-hover:border-blue-500/40 group-hover:text-blue-400">
+          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-border bg-card/80 transition-colors group-hover:border-blue-400/50 group-hover:bg-blue-50/80 group-hover:text-blue-600 dark:group-hover:border-blue-500/40 dark:group-hover:bg-blue-500/10 dark:group-hover:text-blue-400">
             <ContactChannelIcon label="公众号" />
           </span>
           <span className="text-left">{wechatMp.label}</span>
         </button>
         <div
-          className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-3 hidden w-max -translate-x-1/2 flex-col items-center gap-2 rounded-lg border border-blue-500/20 bg-white p-3 opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100 md:flex md:flex-col"
+          className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-3 hidden w-max -translate-x-1/2 flex-col items-center gap-2 rounded-lg border border-blue-200/80 bg-white/95 p-3 opacity-0 shadow-[0_10px_24px_rgba(59,130,246,0.12)] backdrop-blur-sm transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100 dark:border-blue-500/20 dark:bg-card dark:shadow-lg md:flex md:flex-col"
           role="tooltip"
         >
           <Image
@@ -84,7 +84,7 @@ export function WechatMpQrTrigger({ wechatMp, linkClassName }: WechatMpQrTrigger
             height={200}
             className="h-32 w-32 object-contain sm:h-36 sm:w-36"
           />
-          <p className="max-w-[9.5rem] text-center text-xs leading-snug text-neutral-700">
+          <p className="max-w-[9.5rem] text-center text-xs leading-snug text-slate-600 dark:text-muted-foreground">
             {searchHint}
           </p>
         </div>
@@ -103,7 +103,7 @@ export function WechatMpQrTrigger({ wechatMp, linkClassName }: WechatMpQrTrigger
               role="dialog"
               aria-modal="true"
               aria-labelledby="wechat-mp-qr-heading"
-              className="relative w-full max-w-sm rounded-2xl border border-blue-500/25 bg-card p-5 shadow-xl"
+              className="relative w-full max-w-sm rounded-2xl border border-blue-200/80 bg-white/95 p-5 shadow-[0_18px_40px_rgba(15,23,42,0.18)] backdrop-blur-sm dark:border-blue-500/25 dark:bg-card dark:shadow-xl"
             >
               <button
                 type="button"
@@ -120,7 +120,7 @@ export function WechatMpQrTrigger({ wechatMp, linkClassName }: WechatMpQrTrigger
                 {searchHint}
               </p>
               <div className="mt-5 flex justify-center">
-                <div className="overflow-hidden rounded-xl border border-border bg-white p-2 shadow-inner">
+                <div className="overflow-hidden rounded-xl border border-blue-200/70 bg-white p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] dark:border-border dark:shadow-inner">
                   <Image
                     src={wechatMp.src}
                     alt={`${wechatMp.label}「${wechatMp.sub}」二维码`}

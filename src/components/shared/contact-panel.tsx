@@ -17,7 +17,7 @@ function linkDisplayText(href: string, label: string) {
 }
 
 export function ContactPanel({
-  linkClassName = "group flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-blue-400",
+  linkClassName = "group flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400",
 }: ContactPanelProps) {
   const wechatMp = qrCodes.find((qr) => qr.label === "公众号");
   const linkByLabel = Object.fromEntries(contactLinks.map((l) => [l.label, l])) as Record<
@@ -49,7 +49,7 @@ export function ContactPanel({
                 rel={link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
                 className={linkClassName}
               >
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-border bg-card transition-colors group-hover:border-blue-500/40 group-hover:text-blue-400">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-border bg-card/80 transition-colors group-hover:border-blue-400/50 group-hover:bg-blue-50/80 group-hover:text-blue-600 dark:group-hover:border-blue-500/40 dark:group-hover:bg-blue-500/10 dark:group-hover:text-blue-400">
                   <ContactChannelIcon label={link.label} />
                 </span>
                 {text}
