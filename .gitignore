@@ -45,6 +45,7 @@ next-env.d.ts
 dev.db
 test.db
 e2e.db
+app.db
 
 # playwright
 test-results
@@ -56,5 +57,3 @@ reference-site.md
 
 .codex
 card.html
-
-*.db
