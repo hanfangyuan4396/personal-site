@@ -18,6 +18,24 @@ export function WechatIcon({ className }: { className?: string }) {
   );
 }
 
+/** 知识星球品牌图标（仿官方 logo：带缺口的圆环，viewBox 0 0 24 24） */
+export function ZsxqIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.6"
+      strokeLinecap="round"
+      className={className}
+      aria-hidden="true"
+    >
+      {/* 大圆弧：从右上约 40° 绕顺时针到左上约 310°，留出左上缺口 */}
+      <path d="M8.5 3.8 A9 9 0 1 1 3.8 8.5" />
+    </svg>
+  );
+}
+
 /** 知乎品牌图标（Simple Icons Zhihu，viewBox 0 0 24 24） */
 export function ZhihuIcon({ className }: { className?: string }) {
   return (

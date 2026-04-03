@@ -1,63 +1,104 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ContactChannelIcon, ZsxqIcon } from "@/components/shared/contact-channel-icons";
+import { footerRoleLabels } from "@/data/home";
 
-const socialLinks = [
-  { href: "https://github.com/hanfangyuan4396", label: "GitHub" },
-  { href: "https://x.com/hanfangyuan", label: "X" },
-  { href: "https://blog.csdn.net/weixin_44387339", label: "CSDN" },
-  { href: "https://t.zsxq.com/gqdRp", label: "知识星球" },
-];
+const footerContactIconLinkClass =
+  "inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-neutral-200 bg-white/90 text-muted-foreground transition-colors hover:border-blue-500/40 hover:text-blue-400 dark:border-neutral-700 dark:bg-neutral-900/80";
+
+const ZSXQ_URL = "https://t.zsxq.com/gqdRp";
 
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t bg-background">
-      <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
-        <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+    <footer className="border-t border-neutral-200/80 bg-neutral-50/90 dark:border-neutral-800 dark:bg-[#080808]">
+      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start md:gap-12 lg:gap-16">
           <div>
-            <p className="font-bold">方圆</p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              全栈开发 · AI 工程师 · 开源作者
+            <p className="text-lg font-bold tracking-tight text-foreground">方圆</p>
+            <p className="mt-3 text-sm font-medium text-foreground">{footerRoleLabels.join(" · ")}</p>
+            <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
+              智能体开发实践者，Dify-on-WeChat 开源项目作者。聚焦 AI 工程落地与开源协作。
             </p>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-            {socialLinks.map((link) => (
+
+          <div
+            role="region"
+            aria-labelledby="footer-contact-heading"
+            className="flex flex-col gap-4 md:items-end md:text-right"
+          >
+            <h2
+              id="footer-contact-heading"
+              className="text-xs font-semibold uppercase tracking-wider text-muted-foreground"
+            >
+              联系方式
+            </h2>
+            <div className="flex flex-wrap items-center gap-3">
               <Link
-                key={link.href}
-                href={link.href}
+                href="/#contact"
+                className={footerContactIconLinkClass}
+                aria-label="前往联系我 — 微信"
+              >
+                <ContactChannelIcon label="微信" className="h-5 w-5" />
+              </Link>
+              <Link
+                href="/#contact"
+                className={footerContactIconLinkClass}
+                aria-label="前往联系我 — GitHub"
+              >
+                <ContactChannelIcon label="GitHub" className="h-5 w-5" />
+              </Link>
+              <Link
+                href="/#contact"
+                className={footerContactIconLinkClass}
+                aria-label="前往联系我 — CSDN"
+              >
+                <ContactChannelIcon label="CSDN 博客" className="h-5 w-5" />
+              </Link>
+              <Link
+                href="/#contact"
+                className={footerContactIconLinkClass}
+                aria-label="前往联系我 — 邮箱"
+              >
+                <ContactChannelIcon label="邮箱" className="h-5 w-5" />
+              </Link>
+              <Link
+                href={ZSXQ_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className={footerContactIconLinkClass}
+                aria-label="知识星球"
               >
-                {link.label}
+                <ZsxqIcon className="h-5 w-5" />
               </Link>
-            ))}
+            </div>
           </div>
         </div>
-        <div className="mt-6 border-t pt-4 text-center text-xs text-muted-foreground">
-          <p>© {year} 方圆 · Powered by Next.js</p>
-          <p className="mt-3">
+
+        <div className="mt-12">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-center text-xs text-muted-foreground">
+            <span className="shrink-0">
+              © {year} 方圆. All rights reserved. · Powered by Next.js
+            </span>
             <Link
               href="https://beian.mps.gov.cn/#/query/webSearch?code=11010802039582"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 transition-colors hover:text-foreground"
+              className="inline-flex shrink-0 items-center gap-1 transition-colors hover:text-foreground"
             >
               <Image src="/beian.png" alt="公安备案图标" width={18} height={18} />
               京公网安备 11010802039582号
             </Link>
-          </p>
-          <p className="mt-2">
             <Link
               href="https://beian.miit.gov.cn/"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-foreground"
+              className="shrink-0 transition-colors hover:text-foreground"
             >
               京ICP备2022015055号-2
             </Link>
-          </p>
+          </div>
         </div>
       </div>
     </footer>

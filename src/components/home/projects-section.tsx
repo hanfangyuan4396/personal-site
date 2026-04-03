@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ExternalLink, Github } from "lucide-react";
+import { ArrowRight, ExternalLink, Github } from "lucide-react";
 
 import { featuredProjects } from "@/data/home";
 
@@ -7,17 +7,9 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="border-t border-blue-500/10 py-16 sm:py-24">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <div className="mb-12 flex items-end justify-between">
-          <div>
-            <h2 className="text-2xl font-bold sm:text-3xl">精选项目</h2>
-            <p className="mt-2 text-muted-foreground">我参与并引以为豪的代表性工作</p>
-          </div>
-          <Link
-            href="/projects"
-            className="text-sm text-muted-foreground transition-colors hover:text-blue-400"
-          >
-            查看全部 →
-          </Link>
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold sm:text-3xl">精选项目</h2>
+          <p className="mt-2 text-muted-foreground">我参与并引以为豪的代表性工作</p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -88,6 +80,15 @@ export function ProjectsSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-5 py-2 text-sm font-medium text-blue-300 transition-all hover:border-blue-400/60 hover:bg-blue-500/15 hover:text-blue-200"
+          >
+            了解详细项目 <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
         </div>
       </div>
     </section>

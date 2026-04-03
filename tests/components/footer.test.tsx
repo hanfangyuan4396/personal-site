@@ -8,28 +8,26 @@ afterEach(() => {
 });
 
 describe("<Footer />", () => {
-  it("renders brand name", () => {
+  it("renders brand title", () => {
     render(<Footer />);
-    expect(screen.getByText("方圆")).toBeInTheDocument();
+    expect(screen.getByText("方圆", { exact: true })).toBeInTheDocument();
   });
 
-  it("renders tagline", () => {
+  it("renders role labels", () => {
     render(<Footer />);
-    expect(screen.getByText("全栈开发 · AI 工程师 · 开源作者")).toBeInTheDocument();
+    expect(screen.getByText("Web 全栈开发 · AI 工程师 · AI 科技博主")).toBeInTheDocument();
   });
 
-  it("renders social links", () => {
+  it("renders contact icons: four scroll to #contact, 知识星球 opens external link", () => {
     render(<Footer />);
-    expect(screen.getByRole("link", { name: "GitHub" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "前往联系我 — 微信" })).toHaveAttribute("href", "/#contact");
+    expect(screen.getByRole("link", { name: "前往联系我 — GitHub" })).toHaveAttribute("href", "/#contact");
+    expect(screen.getByRole("link", { name: "前往联系我 — CSDN" })).toHaveAttribute("href", "/#contact");
+    expect(screen.getByRole("link", { name: "前往联系我 — 邮箱" })).toHaveAttribute("href", "/#contact");
+    expect(screen.getByRole("link", { name: "知识星球" })).toHaveAttribute(
       "href",
-      "https://github.com/hanfangyuan4396"
+      "https://t.zsxq.com/gqdRp"
     );
-    expect(screen.getByRole("link", { name: "X" })).toHaveAttribute(
-      "href",
-      "https://x.com/hanfangyuan"
-    );
-    expect(screen.getByRole("link", { name: "CSDN" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "知识星球" })).toBeInTheDocument();
   });
 
   it("renders copyright with current year", () => {

@@ -8,12 +8,12 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ContactChannelIcon } from "@/components/shared/contact-channel-icons";
 import { StatsSection } from "@/components/home/stats-section";
-import { qrCodes } from "@/data/home";
+import { heroTypingRoles, qrCodes } from "@/data/home";
 
 /** Hero 区仅展示的联系入口（其余在页面底部「联系我」） */
 const HERO_CONTACT_ICON_LABELS = ["GitHub", "CSDN 博客"] as const;
 
-const roles = ["Web 全栈开发", "AI 工程师", "Dify-on-WeChat 开源项目作者", "AI 科技博主"];
+const roles = heroTypingRoles;
 const typingSpeed = 110;
 const deletingSpeed = 55;
 const holdDelay = 1200;

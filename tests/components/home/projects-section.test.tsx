@@ -28,4 +28,10 @@ describe("<ProjectsSection />", () => {
       "https://github.com/hanfangyuan4396/dify-on-wechat"
     );
   });
+
+  it("renders bottom CTA to projects page", () => {
+    render(<ProjectsSection />);
+    const cta = screen.getByRole("link", { name: /了解详细项目/ });
+    expect(cta).toHaveAttribute("href", "/projects");
+  });
 });

@@ -23,17 +23,9 @@ export function ServicesSection() {
   return (
     <section id="services" className="border-t border-blue-500/10 py-16 sm:py-24">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <div className="mb-12 flex items-end justify-between">
-          <div>
-            <h2 className="text-2xl font-bold sm:text-3xl">我能提供的服务</h2>
-            <p className="mt-2 text-muted-foreground">AI 咨询、智能体开发与工具接入</p>
-          </div>
-          <Link
-            href="/services"
-            className="text-sm text-muted-foreground transition-colors hover:text-blue-400"
-          >
-            查看全部 →
-          </Link>
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold sm:text-3xl">我能提供的服务</h2>
+          <p className="mt-2 text-muted-foreground">AI 咨询、智能体开发与工具接入</p>
         </div>
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
