@@ -1,16 +1,16 @@
 import { skillGroups } from "@/data/skills";
 
 const cardStyle = {
-  wrapper: "border-border bg-card hover:border-blue-500/40 hover:shadow-[0_0_24px_rgba(59,130,246,0.08)]",
-  titleColor: "text-blue-400/80",
-  tagStyle: "rounded-full border border-cyan-500/40 text-cyan-400 bg-cyan-500/5",
+  wrapper: "border-border bg-card hover:border-blue-400/50 hover:shadow-[0_4px_20px_rgba(59,130,246,0.12)] dark:hover:border-blue-500/40 dark:hover:shadow-[0_0_24px_rgba(59,130,246,0.08)]",
+  titleColor: "text-blue-600/80 dark:text-blue-400/80",
+  tagStyle: "rounded-full border border-cyan-300/70 bg-cyan-50 text-cyan-700 dark:border-cyan-500/40 dark:bg-cyan-500/5 dark:text-cyan-400",
 };
 
 export function SkillsSection() {
   return (
     <section
       id="skills"
-      className="border-t border-blue-500/10 bg-gradient-to-b from-transparent to-blue-950/10 py-16 sm:py-24"
+      className="border-t border-blue-500/10 bg-gradient-to-b from-transparent to-blue-100/30 py-16 sm:py-24 dark:to-blue-950/10"
     >
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <div className="mb-12">

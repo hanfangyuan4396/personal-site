@@ -45,37 +45,42 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  /* 极淡蓝白背景，与深色主题同色相 hue 240，有呼吸感 */
+  --background: oklch(0.975 0.008 240);
+  --foreground: oklch(0.16 0.025 264);
+  /* 纯白卡片，与背景形成层次 */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.16 0.025 264);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.16 0.025 264);
+  /* 深蓝主色，用于按钮等主要互动元素 */
+  --primary: oklch(0.33 0.18 264);
+  --primary-foreground: oklch(0.98 0 0);
+  /* 淡蓝灰次级色 */
+  --secondary: oklch(0.935 0.015 240);
+  --secondary-foreground: oklch(0.22 0.04 264);
+  --muted: oklch(0.945 0.012 240);
+  --muted-foreground: oklch(0.46 0.04 240);
+  --accent: oklch(0.935 0.018 240);
+  --accent-foreground: oklch(0.22 0.04 264);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  /* 带蓝调的细腻边框 */
+  --border: oklch(0.88 0.015 240);
+  --input: oklch(0.9 0.012 240);
+  --ring: oklch(0.5 0.12 264);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: oklch(0.97 0.01 240);
+  --sidebar-foreground: oklch(0.16 0.025 264);
+  --sidebar-primary: oklch(0.33 0.18 264);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.935 0.018 240);
+  --sidebar-accent-foreground: oklch(0.22 0.04 264);
+  --sidebar-border: oklch(0.88 0.015 240);
+  --sidebar-ring: oklch(0.5 0.12 264);
 }
 
 .dark {
