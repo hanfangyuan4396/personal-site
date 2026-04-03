@@ -2,7 +2,7 @@ import { skillGroups } from "@/data/skills";
 
 const cardStyle = {
   wrapper: "border-border bg-card hover:border-blue-400/50 hover:shadow-[0_4px_20px_rgba(59,130,246,0.12)] dark:hover:border-blue-500/40 dark:hover:shadow-[0_0_24px_rgba(59,130,246,0.08)]",
-  titleColor: "text-blue-600/80 dark:text-blue-400/80",
+  titleColor: "text-foreground",
   tagStyle: "rounded-full border border-cyan-300/70 bg-cyan-50 text-cyan-700 dark:border-cyan-500/40 dark:bg-cyan-500/5 dark:text-cyan-400",
 };
 

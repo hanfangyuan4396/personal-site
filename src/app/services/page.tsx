@@ -67,13 +67,16 @@ export default function ServicesPage() {
   return (
     <>
       <section className="relative overflow-hidden py-20 sm:py-28">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(59,130,246,0.12),transparent)]" />
-        <div className="pointer-events-none absolute left-1/2 top-16 h-64 w-64 -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(59,130,246,0.08),transparent)] dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(59,130,246,0.12),transparent)]" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-blue-50/40 dark:hidden" />
+        <div className="pointer-events-none absolute left-1/2 top-16 h-64 w-64 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl dark:bg-cyan-500/10" />
 
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6">
           <div className="flex flex-col gap-12 md:flex-row md:items-center md:justify-between md:gap-14">
             <div className="max-w-3xl">
-              <p className="text-sm font-medium tracking-[0.18em] text-blue-300/80">SERVICES</p>
+              <p className="text-sm font-medium tracking-[0.18em] text-blue-600/70 dark:text-blue-300/80">
+                SERVICES
+              </p>
               <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-6xl">我能提供哪些服务</h1>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
                 结合开源项目、LLMOps 平台建设和企业 AI 落地经验，我提供从咨询、方案设计到具体接入的服务，
@@ -83,7 +86,7 @@ export default function ServicesPage() {
                 {heroSignals.map((signal) => (
                   <span
                     key={signal}
-                    className="rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1 text-xs font-medium tracking-wide text-blue-200"
+                    className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-medium tracking-wide text-blue-700 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-200"
                   >
                     {signal}
                   </span>
@@ -103,7 +106,7 @@ export default function ServicesPage() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-blue-500/30 bg-background/80 hover:border-blue-400/60 hover:bg-blue-500/10 hover:text-blue-300"
+                  className="border-blue-300/60 bg-white/80 text-blue-700 hover:border-blue-400 hover:bg-blue-50 hover:text-blue-800 dark:border-blue-500/30 dark:bg-background/80 dark:text-foreground dark:hover:border-blue-400/60 dark:hover:bg-blue-500/10 dark:hover:text-blue-300"
                 >
                   <Link href="#zsxq-coupon">知识星球</Link>
                 </Button>
@@ -111,21 +114,21 @@ export default function ServicesPage() {
             </div>
 
             <div className="w-full max-w-md self-stretch">
-              <div className="relative h-full min-h-72 overflow-hidden rounded-[28px] border border-blue-500/15 bg-gradient-to-br from-blue-950/35 via-background to-cyan-950/20 p-6">
-                <div className="pointer-events-none absolute inset-x-8 top-6 h-px bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent" />
-                <div className="pointer-events-none absolute -right-10 top-10 h-32 w-32 rounded-full bg-cyan-500/15 blur-3xl" />
-                <div className="pointer-events-none absolute -left-6 bottom-10 h-28 w-28 rounded-full bg-blue-500/15 blur-3xl" />
+              <div className="relative h-full min-h-72 overflow-hidden rounded-[28px] border border-blue-200/70 bg-gradient-to-br from-white via-blue-50/75 to-cyan-50/45 p-6 shadow-[0_10px_30px_rgba(59,130,246,0.08)] dark:border-blue-500/15 dark:from-blue-950/35 dark:via-background dark:to-cyan-950/20 dark:shadow-none">
+                <div className="pointer-events-none absolute inset-x-8 top-6 h-px bg-gradient-to-r from-transparent via-cyan-500/45 to-transparent dark:via-cyan-400/60" />
+                <div className="pointer-events-none absolute -right-10 top-10 h-32 w-32 rounded-full bg-cyan-400/12 blur-3xl dark:bg-cyan-500/15" />
+                <div className="pointer-events-none absolute -left-6 bottom-10 h-28 w-28 rounded-full bg-blue-400/12 blur-3xl dark:bg-blue-500/15" />
 
                 <div className="relative flex h-full flex-col justify-between">
                   <div>
                     <div className="space-y-3">
-                      <div className="rounded-2xl border border-blue-500/15 bg-background/40 px-4 py-3 backdrop-blur-sm">
+                      <div className="rounded-2xl border border-blue-200/70 bg-white/80 px-4 py-3 backdrop-blur-sm dark:border-blue-500/15 dark:bg-background/40">
                         <p className="text-sm font-semibold text-foreground">从想法到落地</p>
                         <p className="mt-1 text-sm text-muted-foreground">
                           不只聊概念，也会给出可执行的方案、步骤和取舍建议。
                         </p>
                       </div>
-                      <div className="rounded-2xl border border-blue-500/15 bg-background/30 px-4 py-3 backdrop-blur-sm">
+                      <div className="rounded-2xl border border-blue-200/70 bg-white/70 px-4 py-3 backdrop-blur-sm dark:border-blue-500/15 dark:bg-background/30">
                         <p className="text-sm font-semibold text-foreground">偏真实业务场景</p>
                         <p className="mt-1 text-sm text-muted-foreground">
                           更关注客服、知识库、流程自动化、个人提效这些实际问题。
@@ -138,10 +141,10 @@ export default function ServicesPage() {
                     {deliveryHighlights.map((item) => (
                       <div
                         key={item.label}
-                        className="rounded-2xl border border-blue-500/10 bg-background/35 px-3 py-3 text-center backdrop-blur-sm"
+                        className="rounded-2xl border border-blue-200/60 bg-white/70 px-3 py-3 text-center backdrop-blur-sm dark:border-blue-500/10 dark:bg-background/35"
                       >
                         <div
-                          className={`font-semibold text-blue-300 ${item.value.length > 8 ? "text-sm whitespace-nowrap" : "text-base"}`}
+                          className={`font-semibold text-blue-700 dark:text-blue-300 ${item.value.length > 8 ? "text-sm whitespace-nowrap" : "text-base"}`}
                         >
                           {item.value}
                         </div>
@@ -170,9 +173,9 @@ export default function ServicesPage() {
               return (
                 <div
                   key={service.title}
-                  className="rounded-2xl border border-border bg-card p-6 transition-all hover:border-blue-500/40 hover:shadow-[0_0_24px_rgba(59,130,246,0.08)]"
+                  className="rounded-2xl border border-border bg-card p-6 transition-all hover:border-blue-400/50 hover:shadow-[0_4px_20px_rgba(59,130,246,0.12)] dark:hover:border-blue-500/40 dark:hover:shadow-[0_0_24px_rgba(59,130,246,0.08)]"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-blue-500/20 bg-blue-500/10 text-blue-300">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-blue-200 bg-blue-50 text-blue-700 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-300">
                     <Icon className="h-5 w-5" />
                   </div>
                   <h3 className="mt-5 text-lg font-semibold">{service.title}</h3>
@@ -182,7 +185,7 @@ export default function ServicesPage() {
                   <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
                     {service.bullets.map((bullet) => (
                       <li key={bullet} className="flex gap-2">
-                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500 dark:bg-cyan-400" />
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -194,14 +197,14 @@ export default function ServicesPage() {
         </section>
 
         <section id="zsxq-coupon" className="mt-16 scroll-mt-24 space-y-5">
-          <div className="rounded-[28px] border border-blue-500/20 bg-gradient-to-br from-blue-950/30 via-card to-cyan-950/20 p-6 sm:p-8">
+          <div className="rounded-[28px] border border-blue-200/70 bg-gradient-to-br from-white via-blue-50/80 to-cyan-50/45 p-6 shadow-[0_10px_30px_rgba(59,130,246,0.08)] sm:p-8 dark:border-blue-500/20 dark:from-blue-950/30 dark:via-card dark:to-cyan-950/20 dark:shadow-none">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
                 <h2 className="text-2xl font-semibold sm:text-3xl">{knowledgePlanetOption.title}</h2>
                 <p className="mt-3 text-base leading-relaxed text-muted-foreground">
                   {knowledgePlanetOption.description}
                 </p>
-                <div className="mt-5 rounded-2xl border border-blue-500/15 bg-background/60 p-5">
+                <div className="mt-5 rounded-2xl border border-blue-200/70 bg-white/85 p-5 dark:border-blue-500/15 dark:bg-background/60">
                   <p className="text-base font-semibold text-foreground">
                     {knowledgePlanetOption.qrCode?.title}
                   </p>
@@ -212,7 +215,7 @@ export default function ServicesPage() {
                 <Button
                   asChild
                   variant="outline"
-                  className="mt-6 border-blue-500/30 hover:border-blue-400/60 hover:text-blue-300"
+                  className="mt-6 border-blue-300/60 bg-white/80 text-blue-700 hover:border-blue-400 hover:bg-blue-50 hover:text-blue-800 dark:border-blue-500/30 dark:bg-transparent dark:text-foreground dark:hover:border-blue-400/60 dark:hover:text-blue-300"
                 >
                   <Link
                     href={knowledgePlanetOption.href}
@@ -226,7 +229,7 @@ export default function ServicesPage() {
               </div>
 
               <div className="mx-auto w-full max-w-[280px] shrink-0">
-                <div className="overflow-hidden rounded-[24px] border border-blue-500/20 bg-white p-3 shadow-[0_0_24px_rgba(59,130,246,0.12)]">
+                <div className="overflow-hidden rounded-[24px] border border-blue-200/80 bg-white p-3 shadow-[0_8px_24px_rgba(59,130,246,0.12)] dark:border-blue-500/20 dark:shadow-[0_0_24px_rgba(59,130,246,0.12)]">
                   <Image
                     src={knowledgePlanetOption.qrCode!.src}
                     alt={knowledgePlanetOption.qrCode!.alt}

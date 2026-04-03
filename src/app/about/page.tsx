@@ -33,9 +33,11 @@ const honors = [
 ];
 
 const skillCardStyle = {
-  wrapper: "border-border bg-card hover:border-blue-500/40 hover:shadow-[0_0_24px_rgba(59,130,246,0.08)]",
-  titleColor: "text-blue-400/80",
-  tagStyle: "rounded-full border border-cyan-500/40 text-cyan-400 bg-cyan-500/5",
+  wrapper:
+    "border-border bg-card hover:border-blue-400/50 hover:shadow-[0_4px_20px_rgba(59,130,246,0.12)] dark:hover:border-blue-500/40 dark:hover:shadow-[0_0_24px_rgba(59,130,246,0.08)]",
+  titleColor: "text-foreground",
+  tagStyle:
+    "rounded-full border border-cyan-300/70 bg-cyan-50 text-cyan-700 dark:border-cyan-500/40 dark:bg-cyan-500/5 dark:text-cyan-400",
 };
 
 export const metadata = {
@@ -51,8 +53,8 @@ export default function AboutPage() {
         <div className="shrink-0">
           {/* w-fit + isolate：光晕不撑开整行，视觉上更聚拢在头像周围 */}
           <div className="relative isolate w-fit">
-            <div className="absolute -inset-1.5 rounded-full bg-gradient-to-br from-blue-500 via-cyan-500 to-blue-600 opacity-30 blur-md" />
-            <div className="absolute -inset-0.5 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 opacity-50" />
+            <div className="absolute -inset-1.5 rounded-full bg-gradient-to-br from-blue-500 via-cyan-500 to-blue-600 opacity-20 blur-md dark:opacity-30" />
+            <div className="absolute -inset-0.5 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 opacity-40 dark:opacity-50" />
             <Image
               src="/avatar.jpg"
               alt="方圆头像"
@@ -63,7 +65,7 @@ export default function AboutPage() {
           </div>
         </div>
         <div>
-          <h1 className="text-3xl font-bold text-blue-400 sm:text-4xl">
+          <h1 className="text-3xl font-bold text-blue-700 sm:text-4xl dark:text-blue-400">
             韩方圆
           </h1>
           <p className="mt-1 text-muted-foreground">全栈开发 · AI 工程师 · 开源作者 · 内容创作者</p>
@@ -77,7 +79,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <hr className="mb-16 border-blue-500/10" />
+      <hr className="mb-16 border-blue-200/60 dark:border-blue-500/10" />
 
       {/* 教育背景 */}
       <section className="mb-16">
@@ -86,12 +88,12 @@ export default function AboutPage() {
           {education.map((edu) => (
             <div
               key={edu.degree}
-              className="rounded-xl border border-blue-500/20 bg-gradient-to-br from-blue-950/20 to-card p-5 transition-all hover:border-blue-500/40"
+              className="rounded-xl border border-blue-200/70 bg-gradient-to-br from-white via-blue-50/70 to-cyan-50/45 p-5 transition-all hover:border-blue-300/70 hover:shadow-[0_4px_18px_rgba(59,130,246,0.1)] dark:border-blue-500/20 dark:from-blue-950/20 dark:via-card dark:to-card dark:hover:border-blue-500/40 dark:hover:shadow-none"
             >
               <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <h3 className="font-semibold">{edu.degree}</h3>
-                  <p className="text-sm text-blue-400/70">{edu.school}</p>
+                  <p className="text-sm text-blue-600/80 dark:text-blue-400/70">{edu.school}</p>
                 </div>
                 <span className="text-xs text-muted-foreground sm:shrink-0">{edu.period}</span>
               </div>
@@ -136,7 +138,7 @@ export default function AboutPage() {
           {aboutProjectTeasers.map((p) => (
             <li
               key={p.id}
-              className="rounded-xl border border-blue-500/15 bg-gradient-to-br from-blue-950/15 to-card px-5 py-4 transition-colors hover:border-blue-500/35"
+              className="rounded-xl border border-blue-200/70 bg-gradient-to-br from-white via-blue-50/60 to-cyan-50/35 px-5 py-4 transition-all hover:border-blue-300/70 hover:shadow-[0_4px_18px_rgba(59,130,246,0.1)] dark:border-blue-500/15 dark:from-blue-950/15 dark:via-card dark:to-card dark:hover:border-blue-500/35 dark:hover:shadow-none"
             >
               <div className="flex items-start justify-between gap-3">
                 <h3 className="font-semibold text-foreground">{p.name}</h3>
@@ -147,7 +149,7 @@ export default function AboutPage() {
                         href={p.links.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground transition-colors hover:text-blue-400"
+                        className="text-muted-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400"
                         aria-label={`${p.name} · GitHub`}
                       >
                         <Github className="h-4 w-4" />
@@ -158,7 +160,7 @@ export default function AboutPage() {
                         href={p.links.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground transition-colors hover:text-blue-400"
+                        className="text-muted-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400"
                         aria-label={`${p.name} · 官方文档教程`}
                       >
                         <ExternalLink className="h-4 w-4" />
@@ -169,7 +171,7 @@ export default function AboutPage() {
                         href={p.links.paper}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground transition-colors hover:text-blue-400"
+                        className="text-muted-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400"
                         aria-label={`${p.name} · 论文（ScienceDirect）`}
                       >
                         <BookOpen className="h-4 w-4" />
@@ -180,7 +182,9 @@ export default function AboutPage() {
               </div>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
               {p.highlights.length > 0 ? (
-                <p className="mt-2 text-xs text-blue-400/80">{p.highlights.join(" · ")}</p>
+                <p className="mt-2 text-xs text-blue-600/80 dark:text-blue-400/80">
+                  {p.highlights.join(" · ")}
+                </p>
               ) : null}
             </li>
           ))}
@@ -202,7 +206,7 @@ export default function AboutPage() {
         <ul className="flex flex-col gap-3">
           {honors.map((h, i) => (
             <li key={i} className="flex gap-3 text-sm text-muted-foreground">
-              <span className="mt-0.5 shrink-0 text-blue-400">✦</span>
+              <span className="mt-0.5 shrink-0 text-blue-600 dark:text-blue-400">✦</span>
               {h}
             </li>
           ))}

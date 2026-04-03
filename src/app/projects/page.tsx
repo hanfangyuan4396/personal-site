@@ -4,7 +4,7 @@ import { BookOpen, ExternalLink, Github } from "lucide-react";
 import { featuredProjects } from "@/data/projects";
 
 const projectCardClassName =
-  "group relative flex flex-col rounded-xl border border-border bg-card p-6 transition-all hover:border-blue-500/40 hover:shadow-[0_0_24px_rgba(59,130,246,0.08)]";
+  "group relative flex flex-col rounded-xl border border-border bg-card p-6 transition-all hover:border-blue-400/50 hover:shadow-[0_4px_20px_rgba(59,130,246,0.12)] dark:hover:border-blue-500/40 dark:hover:shadow-[0_0_24px_rgba(59,130,246,0.08)]";
 
 const projectCardStretchLinkClassName =
   "absolute inset-0 z-0 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
@@ -54,7 +54,7 @@ export default function ProjectsPage() {
                       href={project.links.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground transition-colors hover:text-blue-400"
+                      className="text-muted-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400"
                       aria-label="GitHub"
                     >
                       <Github className="h-4 w-4" />
@@ -65,7 +65,7 @@ export default function ProjectsPage() {
                       href={project.links.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground transition-colors hover:text-blue-400"
+                      className="text-muted-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400"
                       aria-label="在线体验"
                     >
                       <ExternalLink className="h-4 w-4" />
@@ -76,7 +76,7 @@ export default function ProjectsPage() {
                       href={project.links.paper}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground transition-colors hover:text-blue-400"
+                      className="text-muted-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400"
                       aria-label="论文（ScienceDirect）"
                     >
                       <BookOpen className="h-4 w-4" />
@@ -105,7 +105,7 @@ export default function ProjectsPage() {
                   {project.highlights.map((h) => (
                     <span
                       key={h}
-                      className="rounded-md border border-blue-500/20 bg-blue-500/10 px-2 py-0.5 text-xs font-medium text-blue-300"
+                      className="rounded-md border border-blue-200 bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-300"
                     >
                       {h}
                     </span>
