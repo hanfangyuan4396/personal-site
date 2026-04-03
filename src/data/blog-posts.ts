@@ -16,7 +16,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "ai-coding-experience",
     title: "AI 编程经验分享",
-    publishedAt: "2026-04-03",
+    publishedAt: "2025-12-06",
     excerpt:
       "从 Copilot 到 Cursor、Claude Code、Codex 等 Agent 的实践体会：Spec 沟通、模块化、测试与 CI 兜底、以及 Claude Code 自动提交。",
     intro:
