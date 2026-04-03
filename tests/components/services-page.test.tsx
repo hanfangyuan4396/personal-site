@@ -20,5 +20,6 @@ describe("<ServicesPage />", () => {
     expect(screen.getByAltText("知识星球优惠券二维码")).toBeInTheDocument();
     expect(document.getElementById("zsxq-coupon")).not.toBeNull();
     expect(screen.getByRole("link", { name: "知识星球" })).toHaveAttribute("href", "#zsxq-coupon");
+    expect(screen.getByRole("link", { name: /联系咨询/ })).toHaveAttribute("href", "/#contact");
   });
 });

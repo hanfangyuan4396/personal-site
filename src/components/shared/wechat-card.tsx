@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { wechatPersonalId } from "@/data/contact";
+
 const CARD_TAGS = ["智能体开发 / AI 技术顾问", "AI 编程 / AI 开源项目 3k+ Stars"];
 
 export function WechatCard() {
@@ -45,7 +47,13 @@ export function WechatCard() {
             className="h-[112px] w-[112px] object-contain sm:h-[128px] sm:w-[128px]"
           />
         </div>
-        <p className="mt-2 text-center text-xs text-muted-foreground sm:text-sm">加我好友</p>
+        <div className="mt-2 space-y-1 text-center">
+          <p className="text-xs text-muted-foreground sm:text-sm">
+            微信号:{" "}
+            <span className="font-mono font-medium text-foreground">{wechatPersonalId}</span>
+          </p>
+          <p className="text-xs text-muted-foreground sm:text-sm">加我好友</p>
+        </div>
       </div>
     </div>
   );

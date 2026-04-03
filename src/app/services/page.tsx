@@ -95,7 +95,7 @@ export default function ServicesPage() {
                   size="lg"
                   className="border-0 bg-blue-600 text-white shadow-[0_0_16px_rgba(59,130,246,0.25)] hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.35)]"
                 >
-                  <Link href="/about">
+                  <Link href="/#contact">
                     联系咨询 <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </Button>

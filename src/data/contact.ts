@@ -1,3 +1,6 @@
+/** 个人微信：搜索添加用微信号（名片展示） */
+export const wechatPersonalId = "fangyuan_ai";
+
 /** 全站联系链接与二维码资源（Hero、联系面板、页脚等复用） */
 export const contactLinks = [
   { label: "GitHub", href: "https://github.com/hanfangyuan4396" },
