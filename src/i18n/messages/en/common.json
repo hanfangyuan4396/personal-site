@@ -1,25 +1,50 @@
 {
   "nav": {
     "home": "Home",
-    "studentsManagement": "Students Management",
-    "siteName": "personal-site",
-    "logout": "Logout"
+    "studentsManagement": "Students",
+    "siteName": "personal-site"
   },
-  "footer": {
-    "copyright": "© {year} personal-site",
-    "poweredBy": "Powered by Next.js · FastAPI · shadcn/ui"
-  },
-  "common": {
+  "status": {
     "loading": "Loading...",
-    "noData": "No data",
-    "refresh": "Refresh",
-    "toast": {
-      "createSuccess": "Created successfully",
-      "createFail": "Create failed",
-      "updateSuccess": "Updated successfully",
-      "updateFail": "Update failed",
-      "deleteSuccess": "Deleted successfully",
-      "deleteFail": "Delete failed"
+    "empty": "No data"
+  },
+  "actions": {
+    "refresh": "Refresh"
+  },
+  "feedback": {
+    "createSuccess": "Created successfully",
+    "createFail": "Create failed"
+  },
+  "students": {
+    "title": "Student Demo",
+    "paginationTotal": "Total {count} items",
+    "paginationPage": "Page {current} / {total}",
+    "columns": {
+      "id": "ID",
+      "name": "Name",
+      "studentId": "Student ID",
+      "gender": "Gender",
+      "age": "Age"
+    },
+    "genders": {
+      "male": "Male",
+      "female": "Female"
+    },
+    "form": {
+      "name": "Name",
+      "studentId": "Student ID",
+      "gender": "Gender",
+      "age": "Age",
+      "namePlaceholder": "John Doe",
+      "studentIdPlaceholder": "S2025001",
+      "agePlaceholder": "18",
+      "genderPlaceholder": "Select",
+      "submit": "Add"
+    },
+    "validation": {
+      "nameRequired": "Please enter name",
+      "genderRequired": "Please select gender",
+      "studentIdRequired": "Please enter student ID"
     }
   }
 }

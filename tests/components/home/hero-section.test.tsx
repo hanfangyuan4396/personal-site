@@ -36,6 +36,14 @@ describe("<HeroSection />", () => {
   it("renders CTA links", () => {
     render(<HeroSection />);
     expect(screen.getByRole("link", { name: /查看项目/ })).toHaveAttribute("href", "/projects");
+    expect(screen.getByRole("link", { name: "服务" })).toHaveAttribute("href", "/services");
     expect(screen.getByRole("link", { name: "关于我" })).toHaveAttribute("href", "/about");
+  });
+
+  it("renders contact channel icons that scroll to #contact", () => {
+    render(<HeroSection />);
+    expect(screen.getByRole("link", { name: "前往联系我 — 微信" })).toHaveAttribute("href", "#contact");
+    expect(screen.getByRole("link", { name: "前往联系我 — GitHub" })).toHaveAttribute("href", "#contact");
+    expect(screen.getByRole("link", { name: "前往联系我 — CSDN 博客" })).toHaveAttribute("href", "#contact");
   });
 });

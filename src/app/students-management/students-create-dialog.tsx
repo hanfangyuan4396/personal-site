@@ -22,9 +22,9 @@ export function CreateStudentDialog({ onCreated }: { onCreated?: () => void }) {
 
   // 创建带翻译的验证 schema
   const schema = z.object({
-    name: z.string().min(1, t("validation.nameRequired")).max(100),
-    gender: z.enum(["male", "female"] as const, { message: t("validation.genderRequired") }),
-    student_id: z.string().min(1, t("validation.studentIdRequired")).max(50),
+    name: z.string().min(1, t("students.validation.nameRequired")).max(100),
+    gender: z.enum(["male", "female"] as const, { message: t("students.validation.genderRequired") }),
+    student_id: z.string().min(1, t("students.validation.studentIdRequired")).max(50),
     age: z
       .union([z.string().length(0), z.coerce.number().int().min(0).max(200)])
       .optional()
@@ -58,8 +58,8 @@ export function CreateStudentDialog({ onCreated }: { onCreated?: () => void }) {
           return res;
         })(),
         {
-          success: t("common.toast.createSuccess"),
-          error: t("common.toast.createFail"),
+          success: t("feedback.createSuccess"),
+          error: t("feedback.createFail"),
         }
       );
       {
@@ -80,9 +80,9 @@ export function CreateStudentDialog({ onCreated }: { onCreated?: () => void }) {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t("form.name")}</FormLabel>
+                <FormLabel>{t("students.form.name")}</FormLabel>
                 <FormControl>
-                  <Input placeholder={t("form.namePlaceholder")} {...field} className="w-44" />
+                  <Input placeholder={t("students.form.namePlaceholder")} {...field} className="w-44" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -94,9 +94,9 @@ export function CreateStudentDialog({ onCreated }: { onCreated?: () => void }) {
             name="student_id"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t("form.studentId")}</FormLabel>
+                <FormLabel>{t("students.form.studentId")}</FormLabel>
                 <FormControl>
-                  <Input placeholder={t("form.studentIdPlaceholder")} {...field} className="w-44" />
+                  <Input placeholder={t("students.form.studentIdPlaceholder")} {...field} className="w-44" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -108,16 +108,16 @@ export function CreateStudentDialog({ onCreated }: { onCreated?: () => void }) {
             name="gender"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t("form.gender")}</FormLabel>
+                <FormLabel>{t("students.form.gender")}</FormLabel>
                 <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
                     <SelectTrigger className="w-32">
-                      <SelectValue placeholder={t("form.genderPlaceholder")} />
+                      <SelectValue placeholder={t("students.form.genderPlaceholder")} />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="male">{t("table.male")}</SelectItem>
-                    <SelectItem value="female">{t("table.female")}</SelectItem>
+                    <SelectItem value="male">{t("students.genders.male")}</SelectItem>
+                    <SelectItem value="female">{t("students.genders.female")}</SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />
@@ -130,10 +130,10 @@ export function CreateStudentDialog({ onCreated }: { onCreated?: () => void }) {
             name="age"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t("form.age")}</FormLabel>
+                <FormLabel>{t("students.form.age")}</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder={t("form.agePlaceholder")}
+                    placeholder={t("students.form.agePlaceholder")}
                     {...field}
                     value={field.value as string}
                     className="w-28"
@@ -144,7 +144,7 @@ export function CreateStudentDialog({ onCreated }: { onCreated?: () => void }) {
             )}
           />
 
-          <Button type="submit" disabled={submitting}>{t("form.submit")}</Button>
+          <Button type="submit" disabled={submitting}>{t("students.form.submit")}</Button>
         </form>
       </Form>
     </div>

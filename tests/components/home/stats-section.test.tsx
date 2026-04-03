@@ -26,4 +26,10 @@ describe("<StatsSection />", () => {
     const { container } = render(<StatsSection />);
     expect(container.querySelectorAll(".rounded-full.border.border-blue-500\\/20").length).toBe(4);
   });
+
+  it("embedded variant renders region and same stats", () => {
+    render(<StatsSection variant="embedded" />);
+    expect(screen.getByRole("region", { name: "数据概览" })).toBeInTheDocument();
+    expect(screen.getByText("3.2k+")).toBeInTheDocument();
+  });
 });

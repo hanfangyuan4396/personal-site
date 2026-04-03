@@ -4,17 +4,19 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { BookOpen, Briefcase, FolderKanban, Home, Menu, UserRound, X } from "lucide-react";
 
+import { WechatIcon } from "@/components/shared/contact-channel-icons";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./theme-toggle";
 
-const navLinks = [
-  { href: "/", label: "首页" },
-  { href: "/services", label: "服务" },
-  { href: "/projects", label: "项目" },
-  { href: "/blog", label: "博客" },
-  { href: "/about", label: "关于我" },
+const navLinks: { href: string; label: string; Icon: LucideIcon }[] = [
+  { href: "/", label: "首页", Icon: Home },
+  { href: "/services", label: "服务", Icon: Briefcase },
+  { href: "/projects", label: "项目", Icon: FolderKanban },
+  { href: "/blog", label: "博客", Icon: BookOpen },
+  { href: "/about", label: "关于我", Icon: UserRound },
 ];
 
 export function Navbar() {
@@ -41,20 +43,22 @@ export function Navbar() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm font-medium sm:flex">
+        <nav className="hidden items-center gap-10 text-sm font-medium sm:flex">
           {navLinks.map((link) => {
             const isActive =
               link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+            const { Icon } = link;
             return (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "transition-colors hover:text-blue-400",
+                  "inline-flex items-center gap-1.5 transition-colors hover:text-blue-400",
                   isActive ? "text-blue-400" : "text-muted-foreground"
                 )}
                 aria-current={isActive ? "page" : undefined}
               >
+                <Icon className="h-4 w-4 shrink-0 opacity-90" aria-hidden />
                 {link.label}
               </Link>
             );
@@ -62,6 +66,13 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <Link
+            href="/#contact"
+            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-card/80 text-muted-foreground transition-colors hover:border-blue-500/40 hover:text-blue-400"
+            aria-label="前往联系我 — 微信"
+          >
+            <WechatIcon className="h-5 w-5" />
+          </Link>
           <ThemeToggle />
           <button
             className="sm:hidden"
@@ -78,16 +89,18 @@ export function Navbar() {
           {navLinks.map((link) => {
             const isActive =
               link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+            const { Icon } = link;
             return (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "block py-2 text-sm font-medium transition-colors hover:text-blue-400",
+                  "flex items-center gap-2 py-2 text-sm font-medium transition-colors hover:text-blue-400",
                   isActive ? "text-blue-400" : "text-muted-foreground"
                 )}
                 onClick={() => setMenuOpen(false)}
               >
+                <Icon className="h-4 w-4 shrink-0 opacity-90" aria-hidden />
                 {link.label}
               </Link>
             );

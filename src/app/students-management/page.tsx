@@ -15,8 +15,8 @@ export default function StudentsManagementPage() {
     <RequireAuth>
       <RequireRole required={Role.Admin}>
         <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6">
-          <h1 className="mb-4 text-xl font-semibold">{t("title")}</h1>
-          <Suspense fallback={<div>{t("common.loading")}</div>}>
+          <h1 className="mb-4 text-xl font-semibold">{t("students.title")}</h1>
+          <Suspense fallback={<div>{t("status.loading")}</div>}>
             <StudentsManagementClient />
           </Suspense>
         </div>

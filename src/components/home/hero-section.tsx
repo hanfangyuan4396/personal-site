@@ -3,27 +3,30 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Github } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { ContactChannelIcon } from "@/components/shared/contact-channel-icons";
+import { StatsSection } from "@/components/home/stats-section";
+import { qrCodes } from "@/data/home";
+
+/** Hero 区仅展示的联系入口（其余在页面底部「联系我」） */
+const HERO_CONTACT_ICON_LABELS = ["GitHub", "CSDN 博客"] as const;
 
 const roles = ["Web 全栈开发", "AI 工程师", "Dify-on-WeChat 开源项目作者", "AI 科技博主"];
 const typingSpeed = 110;
 const deletingSpeed = 55;
 const holdDelay = 1200;
 
-function XIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-  );
-}
+const heroIconBoxClass =
+  "group flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-card/80 text-muted-foreground transition-colors hover:border-blue-500/40 hover:text-blue-400";
 
 export function HeroSection() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+
+  const wechatPersonal = qrCodes.find((qr) => qr.label === "微信");
 
   useEffect(() => {
     const currentRole = roles[roleIndex];
@@ -66,7 +69,7 @@ export function HeroSection() {
               <div className="absolute -inset-1.5 rounded-full bg-gradient-to-br from-blue-500 via-cyan-500 to-blue-600 opacity-30 blur-md" />
               <div className="absolute -inset-0.5 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 opacity-50" />
               <Image
-                src="/wechat_avatar.jpg"
+                src="/avatar.jpg"
                 alt="方圆头像"
                 width={140}
                 height={140}
@@ -107,47 +110,60 @@ export function HeroSection() {
               智能体开发实践者，Dify-on-WeChat 开源项目作者。曾参与 LLMOps 平台核心能力建设，
               也作为 AI 技术顾问推动企业 AI 应用落地，持续分享 AI 编程实践与产品思考。
             </p>
+          </div>
+        </div>
 
-            <div className="flex flex-wrap justify-center gap-3 md:justify-start">
-              <Button
-                asChild
-                size="lg"
-                className="border-0 bg-blue-600 px-6 text-white shadow-[0_0_16px_rgba(59,130,246,0.25)] hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.35)]"
-              >
-                <Link href="/projects">
-                  查看项目 <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                asChild
-                className="border-blue-500/30 bg-background/80 px-6 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] hover:border-blue-400/60 hover:bg-blue-500/10 hover:text-blue-300"
-              >
-                <Link href="/about">关于我</Link>
-              </Button>
-            </div>
+        <StatsSection variant="embedded" />
 
-            <div className="flex items-center gap-4">
-              <Link
-                href="https://github.com/hanfangyuan4396"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground transition-colors hover:text-blue-400"
-                aria-label="GitHub"
-              >
-                <Github className="h-5 w-5" />
+        <div className="mt-6 flex w-full flex-col items-center gap-5 text-center md:mt-8 md:items-start md:text-left">
+          <div className="flex flex-wrap justify-center gap-3 md:justify-start">
+            <Button
+              asChild
+              size="lg"
+              className="border-0 bg-blue-600 px-6 text-white shadow-[0_0_16px_rgba(59,130,246,0.25)] hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.35)]"
+            >
+              <Link href="/projects">
+                查看项目 <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
-              <Link
-                href="https://x.com/hanfangyuan"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground transition-colors hover:text-blue-400"
-                aria-label="X"
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              asChild
+              className="border-blue-500/30 bg-background/80 px-6 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] hover:border-blue-400/60 hover:bg-blue-500/10 hover:text-blue-300"
+            >
+              <Link href="/services">服务</Link>
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              asChild
+              className="border-blue-500/30 bg-background/80 px-6 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] hover:border-blue-400/60 hover:bg-blue-500/10 hover:text-blue-300"
+            >
+              <Link href="/about">关于我</Link>
+            </Button>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-3 md:justify-start">
+            {wechatPersonal ? (
+              <a
+                href="#contact"
+                className={heroIconBoxClass}
+                aria-label="前往联系我 — 微信"
               >
-                <XIcon className="h-5 w-5" />
-              </Link>
-            </div>
+                <ContactChannelIcon label="微信" className="h-5 w-5" />
+              </a>
+            ) : null}
+            {HERO_CONTACT_ICON_LABELS.map((label) => (
+              <a
+                key={label}
+                href="#contact"
+                className={heroIconBoxClass}
+                aria-label={`前往联系我 — ${label}`}
+              >
+                <ContactChannelIcon label={label} className="h-5 w-5" />
+              </a>
+            ))}
           </div>
         </div>
       </div>

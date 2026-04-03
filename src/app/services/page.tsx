@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ExternalLink, MessagesSquare, Sparkles, Wrench } from "lucide-react";
 
@@ -33,12 +34,12 @@ const supportOptions = [
     description: "加入知识星球，获取 AI 工具、实战经验、项目拆解与持续交流。",
     href: "https://t.zsxq.com/gqdRp",
     action: "加入知识星球",
-  },
-  {
-    title: "直接联系我",
-    description: "如果你想聊合作、咨询或项目落地，也可以直接通过邮箱或社交账号联系我。",
-    href: "/about",
-    action: "查看联系方式",
+    qrCode: {
+      src: "/zsxq.jpg",
+      alt: "知识星球优惠券二维码",
+      title: "扫码领券",
+      description: "扫码领取知识星球优惠券，再加入方圆 AI 社区知识星球。",
+    },
   },
 ];
 
@@ -61,6 +62,8 @@ export const metadata = {
 };
 
 export default function ServicesPage() {
+  const knowledgePlanetOption = supportOptions[0];
+
   return (
     <>
       <section className="relative overflow-hidden py-20 sm:py-28">
@@ -195,36 +198,51 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="mt-16 grid grid-cols-1 gap-5 md:grid-cols-2">
-          {supportOptions.map((option) => (
-            <div
-              key={option.title}
-              className="rounded-2xl border border-blue-500/15 bg-gradient-to-br from-blue-950/20 to-card p-6"
-            >
-              <h2 className="text-xl font-semibold">{option.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {option.description}
-              </p>
-              <Button
-                asChild
-                variant="outline"
-                className="mt-5 border-blue-500/30 hover:border-blue-400/60 hover:text-blue-300"
-              >
-                <Link
-                  href={option.href}
-                  target={option.href.startsWith("http") ? "_blank" : undefined}
-                  rel={option.href.startsWith("http") ? "noopener noreferrer" : undefined}
+        <section className="mt-16 space-y-5">
+          <div className="rounded-[28px] border border-blue-500/20 bg-gradient-to-br from-blue-950/30 via-card to-cyan-950/20 p-6 sm:p-8">
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-2xl">
+                <h2 className="text-2xl font-semibold sm:text-3xl">{knowledgePlanetOption.title}</h2>
+                <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                  {knowledgePlanetOption.description}
+                </p>
+                <div className="mt-5 rounded-2xl border border-blue-500/15 bg-background/60 p-5">
+                  <p className="text-base font-semibold text-foreground">
+                    {knowledgePlanetOption.qrCode?.title}
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {knowledgePlanetOption.qrCode?.description}
+                  </p>
+                </div>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="mt-6 border-blue-500/30 hover:border-blue-400/60 hover:text-blue-300"
                 >
-                  {option.action}
-                  {option.href.startsWith("http") ? (
+                  <Link
+                    href={knowledgePlanetOption.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {knowledgePlanetOption.action}
                     <ExternalLink className="ml-1 h-4 w-4" />
-                  ) : (
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  )}
-                </Link>
-              </Button>
+                  </Link>
+                </Button>
+              </div>
+
+              <div className="mx-auto w-full max-w-[280px] shrink-0">
+                <div className="overflow-hidden rounded-[24px] border border-blue-500/20 bg-white p-3 shadow-[0_0_24px_rgba(59,130,246,0.12)]">
+                  <Image
+                    src={knowledgePlanetOption.qrCode!.src}
+                    alt={knowledgePlanetOption.qrCode!.alt}
+                    width={280}
+                    height={280}
+                    className="h-full w-full rounded-[18px] object-contain"
+                  />
+                </div>
+              </div>
             </div>
-          ))}
+          </div>
         </section>
       </div>
     </>

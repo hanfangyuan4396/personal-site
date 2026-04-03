@@ -72,7 +72,7 @@ export function StudentsManagementClient() {
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between gap-3">
         <div className="text-sm text-muted-foreground">
-          {t("pagination.total", { count: total })}
+          {t("students.paginationTotal", { count: total })}
         </div>
         <CreateStudentDialog onCreated={refresh} />
       </div>
@@ -81,11 +81,11 @@ export function StudentsManagementClient() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="w-[100px]">{t("table.id")}</TableHead>
-              <TableHead>{t("table.name")}</TableHead>
-              <TableHead>{t("table.studentId")}</TableHead>
-              <TableHead>{t("table.gender")}</TableHead>
-              <TableHead className="text-right">{t("table.age")}</TableHead>
+              <TableHead className="w-[100px]">{t("students.columns.id")}</TableHead>
+              <TableHead>{t("students.columns.name")}</TableHead>
+              <TableHead>{t("students.columns.studentId")}</TableHead>
+              <TableHead>{t("students.columns.gender")}</TableHead>
+              <TableHead className="text-right">{t("students.columns.age")}</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -94,21 +94,21 @@ export function StudentsManagementClient() {
                 <TableCell>{it.id}</TableCell>
                 <TableCell>{it.name}</TableCell>
                 <TableCell>{it.student_id}</TableCell>
-                <TableCell>{t(`table.${it.gender}`)}</TableCell>
+                <TableCell>{t(`students.genders.${it.gender}`)}</TableCell>
                 <TableCell className="text-right">{it.age ?? "-"}</TableCell>
               </TableRow>
             ))}
             {items.length === 0 && !loading && (
               <TableRow>
                 <TableCell colSpan={5} className="py-6 text-center text-muted-foreground">
-                  {t("common.noData")}
+                  {t("status.empty")}
                 </TableCell>
               </TableRow>
             )}
             {loading && (
               <TableRow>
                 <TableCell colSpan={5} className="py-6 text-center text-muted-foreground">
-                  {t("common.loading")}
+                  {t("status.loading")}
                 </TableCell>
               </TableRow>
             )}
@@ -118,7 +118,7 @@ export function StudentsManagementClient() {
 
       <div className="flex items-center justify-between gap-3">
         <div className="text-sm text-muted-foreground">
-          {t("pagination.page", { current: page, total: totalPages })}
+          {t("students.paginationPage", { current: page, total: totalPages })}
         </div>
         <Pagination>
           <PaginationContent>
@@ -137,7 +137,7 @@ export function StudentsManagementClient() {
 
       <div className="flex items-center justify-end">
         <Button variant="ghost" onClick={() => fetchData(page)} disabled={loading}>
-          {t("common.refresh")}
+          {t("actions.refresh")}
         </Button>
       </div>
     </div>

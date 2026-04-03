@@ -1,8 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 
-import { contactLinks, qrCodes, skillGroups } from "@/data/home";
+import { ContactSection } from "@/components/home/contact-section";
+import { skillGroups } from "@/data/home";
 
 const education = [
   {
@@ -48,7 +47,7 @@ export default function AboutPage() {
             <div className="absolute -inset-1.5 rounded-full bg-gradient-to-br from-blue-500 via-cyan-500 to-blue-600 opacity-30 blur-md" />
             <div className="absolute -inset-0.5 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 opacity-50" />
             <Image
-              src="/wechat_avatar.jpg"
+              src="/avatar.jpg"
               alt="方圆头像"
               width={120}
               height={120}
@@ -133,48 +132,7 @@ export default function AboutPage() {
         </ul>
       </section>
 
-      <hr className="mb-16 border-blue-500/10" />
-
-      {/* 联系方式 */}
-      <section>
-        <h2 className="mb-8 text-xl font-bold">联系我</h2>
-        <div className="flex flex-col gap-10 md:flex-row md:gap-16">
-          <div className="flex flex-col gap-3">
-            {contactLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith("mailto") ? undefined : "_blank"}
-                rel={link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
-                className="group flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-blue-400"
-              >
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-blue-400" />
-                {link.label}
-              </Link>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-3 gap-4 sm:gap-6">
-            {qrCodes.map((qr) => (
-              <div key={qr.label} className="flex flex-col items-center gap-2">
-                <div className="overflow-hidden rounded-lg border border-blue-500/20 bg-white p-1 transition-all hover:border-blue-500/50 hover:shadow-[0_0_16px_rgba(59,130,246,0.15)]">
-                  <Image
-                    src={qr.src}
-                    alt={qr.label}
-                    width={100}
-                    height={100}
-                    className="h-24 w-24 object-contain sm:h-28 sm:w-28"
-                  />
-                </div>
-                <div className="text-center">
-                  <p className="text-xs font-medium">{qr.label}</p>
-                  <p className="text-xs text-muted-foreground">{qr.sub}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ContactSection />
     </div>
   );
 }

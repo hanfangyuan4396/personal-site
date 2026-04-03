@@ -1,25 +1,50 @@
 {
   "nav": {
     "home": "首页",
-    "studentsManagement": "学生管理",
-    "siteName": "personal-site",
-    "logout": "退出"
+    "studentsManagement": "学生示例",
+    "siteName": "personal-site"
   },
-  "footer": {
-    "copyright": "© {year} personal-site",
-    "poweredBy": "Powered by Next.js · FastAPI · shadcn/ui"
-  },
-  "common": {
+  "status": {
     "loading": "加载中...",
-    "noData": "暂无数据",
-    "refresh": "刷新",
-    "toast": {
-      "createSuccess": "新增成功",
-      "createFail": "新增失败",
-      "updateSuccess": "更新成功",
-      "updateFail": "更新失败",
-      "deleteSuccess": "删除成功",
-      "deleteFail": "删除失败"
+    "empty": "暂无数据"
+  },
+  "actions": {
+    "refresh": "刷新"
+  },
+  "feedback": {
+    "createSuccess": "新增成功",
+    "createFail": "新增失败"
+  },
+  "students": {
+    "title": "学生示例",
+    "paginationTotal": "共 {count} 条",
+    "paginationPage": "第 {current} / {total} 页",
+    "columns": {
+      "id": "ID",
+      "name": "姓名",
+      "studentId": "学号",
+      "gender": "性别",
+      "age": "年龄"
+    },
+    "genders": {
+      "male": "男",
+      "female": "女"
+    },
+    "form": {
+      "name": "姓名",
+      "studentId": "学号",
+      "gender": "性别",
+      "age": "年龄",
+      "namePlaceholder": "张三",
+      "studentIdPlaceholder": "S2025001",
+      "agePlaceholder": "18",
+      "genderPlaceholder": "请选择",
+      "submit": "新增"
+    },
+    "validation": {
+      "nameRequired": "请输入姓名",
+      "genderRequired": "请选择性别",
+      "studentIdRequired": "请输入学号"
     }
   }
 }
