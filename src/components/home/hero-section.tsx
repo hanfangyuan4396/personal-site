@@ -8,7 +8,8 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ContactChannelIcon } from "@/components/shared/contact-channel-icons";
 import { StatsSection } from "@/components/home/stats-section";
-import { heroTypingRoles, qrCodes } from "@/data/home";
+import { heroTypingRoles } from "@/data/home-hero";
+import { qrCodes } from "@/data/contact";
 
 /** Hero 区仅展示的联系入口（其余在页面底部「联系我」） */
 const HERO_CONTACT_ICON_LABELS = ["GitHub", "CSDN 博客"] as const;

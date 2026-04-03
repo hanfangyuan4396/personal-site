@@ -1,4 +1,4 @@
-import { timelineItems } from "@/data/home";
+import { timelineItems } from "@/data/timeline";
 import { cn } from "@/lib/utils";
 
 const typeStyles = {

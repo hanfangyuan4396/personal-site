@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { contactLinks, qrCodes } from "@/data/home";
+import { contactLinks, qrCodes } from "@/data/contact";
 import { WechatCard } from "@/components/shared/wechat-card";
 import { ContactChannelIcon, CONTACT_LINK_ORDER } from "@/components/shared/contact-channel-icons";
 

@@ -105,9 +105,7 @@ export default function ServicesPage() {
                   variant="outline"
                   className="border-blue-500/30 bg-background/80 hover:border-blue-400/60 hover:bg-blue-500/10 hover:text-blue-300"
                 >
-                  <Link href="https://t.zsxq.com/gqdRp" target="_blank" rel="noopener noreferrer">
-                    知识星球 <ExternalLink className="ml-1 h-4 w-4" />
-                  </Link>
+                  <Link href="#zsxq-coupon">知识星球</Link>
                 </Button>
               </div>
             </div>
@@ -198,7 +196,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="mt-16 space-y-5">
+        <section id="zsxq-coupon" className="mt-16 scroll-mt-24 space-y-5">
           <div className="rounded-[28px] border border-blue-500/20 bg-gradient-to-br from-blue-950/30 via-card to-cyan-950/20 p-6 sm:p-8">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">

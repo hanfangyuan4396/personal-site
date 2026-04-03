@@ -1,4 +1,4 @@
-import { skillGroups } from "@/data/home";
+import { skillGroups } from "@/data/skills";
 
 const cardStyle = {
   wrapper: "border-border bg-card hover:border-blue-500/40 hover:shadow-[0_0_24px_rgba(59,130,246,0.08)]",

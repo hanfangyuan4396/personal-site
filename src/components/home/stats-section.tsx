@@ -1,6 +1,6 @@
 import { BarChart3, Boxes, FileText, Star, type LucideIcon } from "lucide-react";
 
-import { stats, type HomeStatIcon } from "@/data/home";
+import { stats, type HomeStatIcon } from "@/data/home-stats";
 
 const statIcons: Record<HomeStatIcon, LucideIcon> = {
   star: Star,

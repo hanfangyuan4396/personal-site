@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ContactChannelIcon, ZsxqIcon } from "@/components/shared/contact-channel-icons";
-import { footerRoleLabels } from "@/data/home";
+import { footerRoleLabels } from "@/data/home-hero";
 
 const footerContactIconLinkClass =
   "inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-card/80 text-muted-foreground transition-colors hover:border-blue-500/40 hover:text-blue-400";
 
-const ZSXQ_URL = "https://t.zsxq.com/gqdRp";
+const ZSXQ_COUPON_SECTION = "/services#zsxq-coupon";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -64,9 +64,7 @@ export function Footer() {
                 <ContactChannelIcon label="邮箱" className="h-5 w-5" />
               </Link>
               <Link
-                href={ZSXQ_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={ZSXQ_COUPON_SECTION}
                 className={footerContactIconLinkClass}
                 aria-label="知识星球"
               >

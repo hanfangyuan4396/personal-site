@@ -18,7 +18,7 @@ describe("<Footer />", () => {
     expect(screen.getByText("Web 全栈开发 · AI 工程师 · AI 科技博主")).toBeInTheDocument();
   });
 
-  it("renders contact icons: four scroll to #contact, 知识星球 opens external link", () => {
+  it("renders contact icons: four scroll to #contact, 知识星球 links to services coupon section", () => {
     render(<Footer />);
     expect(screen.getByRole("link", { name: "前往联系我 — 微信" })).toHaveAttribute("href", "/#contact");
     expect(screen.getByRole("link", { name: "前往联系我 — GitHub" })).toHaveAttribute("href", "/#contact");
@@ -26,7 +26,7 @@ describe("<Footer />", () => {
     expect(screen.getByRole("link", { name: "前往联系我 — 邮箱" })).toHaveAttribute("href", "/#contact");
     expect(screen.getByRole("link", { name: "知识星球" })).toHaveAttribute(
       "href",
-      "https://t.zsxq.com/gqdRp"
+      "/services#zsxq-coupon"
     );
   });
 

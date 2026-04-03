@@ -18,5 +18,7 @@ describe("<ServicesPage />", () => {
     expect(screen.getByText("方圆 AI 社区知识星球")).toBeInTheDocument();
     expect(screen.getByText("扫码领券")).toBeInTheDocument();
     expect(screen.getByAltText("知识星球优惠券二维码")).toBeInTheDocument();
+    expect(document.getElementById("zsxq-coupon")).not.toBeNull();
+    expect(screen.getByRole("link", { name: "知识星球" })).toHaveAttribute("href", "#zsxq-coupon");
   });
 });
