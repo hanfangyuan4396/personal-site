@@ -57,7 +57,7 @@ const deliveryHighlights = [
 ];
 
 export const metadata = {
-  title: "服务 · 方圆",
+  title: "方圆AI分享",
   description: "方圆提供的 AI 咨询、智能体开发、小龙虾接入与知识社区服务",
 };
 
@@ -118,10 +118,7 @@ export default function ServicesPage() {
 
                 <div className="relative flex h-full flex-col justify-between">
                   <div>
-                    <p className="text-xs font-medium tracking-[0.2em] text-cyan-300/80">
-                      SERVICE FOCUS
-                    </p>
-                    <div className="mt-4 space-y-3">
+                    <div className="space-y-3">
                       <div className="rounded-2xl border border-blue-500/15 bg-background/40 px-4 py-3 backdrop-blur-sm">
                         <p className="text-sm font-semibold text-foreground">从想法到落地</p>
                         <p className="mt-1 text-sm text-muted-foreground">

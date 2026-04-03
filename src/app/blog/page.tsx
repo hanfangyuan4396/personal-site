@@ -3,7 +3,7 @@ import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const metadata = {
-  title: "博客 · 方圆",
+  title: "方圆AI分享",
   description: "方圆关于 AI、编程与开源的技术分享",
 };
 

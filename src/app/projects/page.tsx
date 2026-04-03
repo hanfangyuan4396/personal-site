@@ -10,7 +10,7 @@ const projectCardStretchLinkClassName =
   "absolute inset-0 z-0 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
 export const metadata = {
-  title: "项目 · 方圆",
+  title: "方圆AI分享",
   description: "方圆参与并引以为豪的代表性项目",
 };
 
