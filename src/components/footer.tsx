@@ -4,7 +4,7 @@ import { ContactChannelIcon, ZsxqIcon } from "@/components/shared/contact-channe
 import { footerRoleLabels } from "@/data/home";
 
 const footerContactIconLinkClass =
-  "inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-neutral-200 bg-white/90 text-muted-foreground transition-colors hover:border-blue-500/40 hover:text-blue-400 dark:border-neutral-700 dark:bg-neutral-900/80";
+  "inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-card/80 text-muted-foreground transition-colors hover:border-blue-500/40 hover:text-blue-400";
 
 const ZSXQ_URL = "https://t.zsxq.com/gqdRp";
 
@@ -12,7 +12,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-neutral-200/80 bg-neutral-50/90 dark:border-neutral-800 dark:bg-[#080808]">
+    <footer className="border-t border-blue-500/10 bg-background">
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start md:gap-12 lg:gap-16">
           <div>
