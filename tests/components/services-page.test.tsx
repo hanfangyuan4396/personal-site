@@ -16,6 +16,9 @@ describe("<ServicesPage />", () => {
     expect(screen.getByText("AI 智能体开发")).toBeInTheDocument();
     expect(screen.getByText("小龙虾安装接入个人微信")).toBeInTheDocument();
     expect(screen.getByText("方圆 AI 社区知识星球")).toBeInTheDocument();
+    expect(screen.getByText("专注 AI 干货分享与应用实践，帮你减少信息噪音、降低试错成本，更快把 AI 真正用到实际工作中。")).toBeInTheDocument();
+    expect(screen.getByText("筛选值得关注的 AI 工具、信息和方向，少走弯路")).toBeInTheDocument();
+    expect(screen.getByText("星球会员专属微信微信群，持续交流与答疑")).toBeInTheDocument();
     expect(screen.getByText("扫码领券")).toBeInTheDocument();
     expect(screen.getByAltText("知识星球优惠券二维码")).toBeInTheDocument();
     expect(document.getElementById("zsxq-coupon")).not.toBeNull();

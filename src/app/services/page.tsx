@@ -32,6 +32,13 @@ const supportOptions = [
   {
     title: "方圆 AI 社区知识星球",
     description: "加入知识星球，获取 AI 工具、实战经验、项目拆解与持续交流。",
+    intro:
+      "专注 AI 干货分享与应用实践，帮你减少信息噪音、降低试错成本，更快把 AI 真正用到实际工作中。",
+    highlights: [
+      "筛选值得关注的 AI 工具、信息和方向，少走弯路",
+      "分享能直接上手的 AI 工作流、案例和落地经验",
+      "星球会员专属微信微信群，持续交流与答疑",
+    ],
     href: "https://t.zsxq.com/gqdRp",
     action: "加入知识星球",
     qrCode: {
@@ -204,6 +211,17 @@ export default function ServicesPage() {
                 <p className="mt-3 text-base leading-relaxed text-muted-foreground">
                   {knowledgePlanetOption.description}
                 </p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {knowledgePlanetOption.intro}
+                </p>
+                <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
+                  {knowledgePlanetOption.highlights.map((highlight) => (
+                    <li key={highlight} className="flex gap-2">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500 dark:bg-cyan-400" />
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
                 <div className="mt-5 rounded-2xl border border-blue-200/70 bg-white/85 p-5 dark:border-blue-500/15 dark:bg-background/60">
                   <p className="text-base font-semibold text-foreground">
                     {knowledgePlanetOption.qrCode?.title}
