@@ -1,9 +1,9 @@
-import { ContactSection } from "./_components/contact-section";
-import { HeroSection } from "./_components/hero-section";
-import { ProjectsSection } from "./_components/projects-section";
-import { ServicesSection } from "./_components/services-section";
-import { SkillsSection } from "./_components/skills-section";
-import { TimelineSection } from "./_components/timeline-section";
+import { ContactSection } from "@/components/sections/contact-section";
+import { HeroSection } from "./components/hero-section";
+import { ProjectsSection } from "./components/projects-section";
+import { ServicesSection } from "./components/services-section";
+import { SkillsSection } from "./components/skills-section";
+import { TimelineSection } from "./components/timeline-section";
 
 export default function HomePage() {
   return (
