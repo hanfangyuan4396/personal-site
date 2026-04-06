@@ -1,13 +1,17 @@
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
+import type { Metadata } from "next";
 
 import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/data/blog-posts";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "方圆AI分享",
-  description: "方圆关于 AI、编程与开源的技术分享",
-};
+export const metadata: Metadata = createMetadata({
+  title: "AI、编程与开源博客",
+  description: "方圆关于 AI、编程、开源与实践落地的技术分享，后续将持续补充 AI 咨询、智能体开发与企业 AI 落地相关内容。",
+  path: "/blog",
+  keywords: ["AI 博客", "AI 咨询", "AI 智能体开发", "企业 AI 落地", "微信接入 AI"],
+});
 
 function formatDate(iso: string) {
   const d = new Date(iso + "T00:00:00");

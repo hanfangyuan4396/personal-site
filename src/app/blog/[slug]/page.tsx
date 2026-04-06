@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { getAllBlogSlugs, getBlogPostBySlug } from "@/data/blog-posts";
+import { createMetadata } from "@/lib/seo";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -18,10 +19,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!post) {
     return { title: "文章未找到" };
   }
-  return {
-    title: `${post.title} · 方圆AI分享`,
+  return createMetadata({
+    title: post.title,
     description: post.excerpt,
-  };
+    path: `/blog/${post.slug}`,
+    keywords: [post.title, "AI 博客", "AI 编程", "开源实践"],
+  });
 }
 
 function formatDate(iso: string) {

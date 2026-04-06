@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { NotificationProvider } from "@/providers/notification-provider";
 import { ThemeProvider } from "@/components/theme-provider";
+import { defaultOgImagePath, getSiteUrl, siteName } from "@/lib/seo";
 
 import "./globals.css";
 
@@ -20,10 +21,37 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const defaultOgImageUrl = new URL(defaultOgImagePath, getSiteUrl()).toString();
+
 export const metadata: Metadata = {
-  title: "方圆AI分享",
+  metadataBase: getSiteUrl(),
+  title: {
+    default: siteName,
+    template: `%s | ${siteName}`,
+  },
   description:
     "智能体开发实践者，Dify-on-WeChat 开源项目作者，曾参与 LLMOps 平台核心能力建设，也作为 AI 技术顾问推动企业 AI 应用落地。",
+  openGraph: {
+    title: siteName,
+    description:
+      "智能体开发实践者，Dify-on-WeChat 开源项目作者，曾参与 LLMOps 平台核心能力建设，也作为 AI 技术顾问推动企业 AI 应用落地。",
+    siteName,
+    locale: "zh_CN",
+    type: "website",
+    images: [
+      {
+        url: defaultOgImageUrl,
+        alt: siteName,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description:
+      "智能体开发实践者，Dify-on-WeChat 开源项目作者，曾参与 LLMOps 平台核心能力建设，也作为 AI 技术顾问推动企业 AI 应用落地。",
+    images: [defaultOgImageUrl],
+  },
 };
 
 export default async function RootLayout({
