@@ -36,28 +36,28 @@ export function Footer() {
             </h2>
             <div className="flex flex-wrap items-center gap-3">
               <Link
-                href="/#contact"
+                href="/home#contact"
                 className={footerContactIconLinkClass}
                 aria-label="前往联系我 — 微信"
               >
                 <ContactChannelIcon label="微信" className="h-5 w-5" />
               </Link>
               <Link
-                href="/#contact"
+                href="/home#contact"
                 className={footerContactIconLinkClass}
                 aria-label="前往联系我 — GitHub"
               >
                 <ContactChannelIcon label="GitHub" className="h-5 w-5" />
               </Link>
               <Link
-                href="/#contact"
+                href="/home#contact"
                 className={footerContactIconLinkClass}
                 aria-label="前往联系我 — CSDN"
               >
                 <ContactChannelIcon label="CSDN 博客" className="h-5 w-5" />
               </Link>
               <Link
-                href="/#contact"
+                href="/home#contact"
                 className={footerContactIconLinkClass}
                 aria-label="前往联系我 — 邮箱"
               >

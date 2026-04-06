@@ -1,7 +1,7 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 
-import { ContactSection } from "@/components/home/contact-section";
+import { ContactSection } from "@/app/home/_components/contact-section";
 
 afterEach(() => {
   cleanup();

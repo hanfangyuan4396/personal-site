@@ -30,7 +30,6 @@ function StatsGrid() {
   );
 }
 
-/** Hero 内嵌：无卡片底、弱分割，数字为主、图标点缀 */
 function StatsGridEmbedded() {
   return (
     <div className="grid grid-cols-2 gap-x-5 gap-y-4 sm:grid-cols-4 sm:gap-x-6">
@@ -55,7 +54,6 @@ function StatsGridEmbedded() {
 }
 
 export type StatsSectionProps = {
-  /** 嵌入 Hero 时：极简；与下方 CTA 同宽（整栏 max-w-5xl 内容区） */
   variant?: "default" | "embedded";
 };
 

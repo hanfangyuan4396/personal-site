@@ -39,13 +39,11 @@ export function TimelineSection() {
         </div>
 
         <div className="relative ml-3">
-          {/* 渐变竖线 */}
           <div className="absolute inset-y-0 left-0 w-px bg-gradient-to-b from-blue-500/50 via-emerald-500/30 to-orange-500/20" />
 
           <div className="flex flex-col gap-8">
             {timelineItems.map((item, index) => (
               <div key={index} className="relative pl-8">
-                {/* 发光圆点 */}
                 <div
                   className={cn(
                     "absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full ring-2 ring-background",

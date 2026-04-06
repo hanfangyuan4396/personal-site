@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./theme-toggle";
 
 const navLinks: { href: string; label: string; Icon: LucideIcon }[] = [
-  { href: "/", label: "首页", Icon: Home },
+  { href: "/home", label: "首页", Icon: Home },
   { href: "/services", label: "服务", Icon: Briefcase },
   { href: "/projects", label: "项目", Icon: FolderKanban },
   { href: "/blog", label: "博客", Icon: BookOpen },
@@ -27,7 +27,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-blue-200/60 bg-white/85 shadow-[0_1px_8px_rgba(59,130,246,0.06)] backdrop-blur-md dark:border-blue-500/10 dark:bg-background/80 dark:shadow-none">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link
-          href="/"
+          href="/home"
           className="inline-flex items-center gap-2"
         >
           <Image
@@ -46,7 +46,9 @@ export function Navbar() {
         <nav className="hidden items-center gap-10 text-sm font-medium sm:flex">
           {navLinks.map((link) => {
             const isActive =
-              link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+              link.href === "/home"
+                ? pathname === "/home" || pathname === "/"
+                : pathname.startsWith(link.href);
             const { Icon } = link;
             return (
               <Link
@@ -67,7 +69,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <Link
-            href="/#contact"
+            href="/home#contact"
             className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-card/80 text-muted-foreground transition-colors hover:border-blue-400/50 hover:text-blue-600 dark:hover:border-blue-500/40 dark:hover:text-blue-400"
             aria-label="前往联系我 — 微信"
           >
@@ -88,7 +90,9 @@ export function Navbar() {
         <nav className="border-t border-blue-200/60 px-4 py-3 sm:hidden dark:border-blue-500/10">
           {navLinks.map((link) => {
             const isActive =
-              link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+              link.href === "/home"
+                ? pathname === "/home" || pathname === "/"
+                : pathname.startsWith(link.href);
             const { Icon } = link;
             return (
               <Link

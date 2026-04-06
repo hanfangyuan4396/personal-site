@@ -1,7 +1,7 @@
 import { act, cleanup, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-import { HeroSection } from "@/components/home/hero-section";
+import { HeroSection } from "@/app/home/_components/hero-section";
 
 beforeEach(() => {
   vi.useFakeTimers();

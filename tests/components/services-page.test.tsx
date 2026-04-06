@@ -41,7 +41,7 @@ describe("<ServicesPage />", () => {
     expect(screen.getAllByRole("link", { name: /联系咨询/ })).toHaveLength(2);
     expect(screen.getAllByRole("link", { name: /联系咨询/ })[0]).toHaveAttribute(
       "href",
-      "/#contact",
+      "/home#contact",
     );
   });
 });

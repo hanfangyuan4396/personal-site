@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpen, ExternalLink, Github } from "lucide-react";
 
-import { ContactSection } from "@/components/home/contact-section";
+import { ContactSection } from "@/app/home/_components/contact-section";
 import { Button } from "@/components/ui/button";
 import { featuredProjects } from "@/data/projects";
 import { skillGroups } from "@/data/skills";

@@ -1,7 +1,7 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 
-import { TimelineSection } from "@/components/home/timeline-section";
+import { TimelineSection } from "@/app/home/_components/timeline-section";
 
 afterEach(() => {
   cleanup();

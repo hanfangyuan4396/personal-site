@@ -5,13 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import { ContactChannelIcon } from "@/components/shared/contact-channel-icons";
-import { StatsSection } from "@/components/home/stats-section";
-import { heroTypingRoles } from "@/data/home-hero";
+import { Button } from "@/components/ui/button";
 import { qrCodes } from "@/data/contact";
+import { heroTypingRoles } from "@/data/home-hero";
+import { StatsSection } from "./stats-section";
 
-/** Hero 区仅展示的联系入口（其余在页面底部「联系我」） */
 const HERO_CONTACT_ICON_LABELS = ["GitHub", "CSDN 博客"] as const;
 
 const roles = heroTypingRoles;
@@ -58,17 +57,13 @@ export function HeroSection() {
 
   return (
     <section className="relative overflow-hidden py-20 sm:py-28">
-      {/* 顶部径向蓝色光晕背景 */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(59,130,246,0.08),transparent)] dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(59,130,246,0.12),transparent)]" />
-      {/* 浅色模式底部蓝调渐变，增加空气感 */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-blue-50/40 dark:hidden" />
 
       <div className="relative mx-auto max-w-5xl px-4 sm:px-6">
         <div className="flex flex-col items-center gap-8 text-center md:flex-row md:items-start md:gap-14 md:text-left">
-          {/* 头像 */}
           <div className="shrink-0">
             <div className="relative">
-              {/* 光晕光圈 */}
               <div className="absolute -inset-1.5 rounded-full bg-gradient-to-br from-blue-500 via-cyan-500 to-blue-600 opacity-20 blur-md dark:opacity-30" />
               <div className="absolute -inset-0.5 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 opacity-40 dark:opacity-50" />
               <Image

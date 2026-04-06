@@ -5,7 +5,7 @@ import { Navbar } from "@/components/navbar";
 
 // mock next/navigation
 vi.mock("next/navigation", () => ({
-  usePathname: () => "/",
+  usePathname: () => "/home",
 }));
 
 // mock theme-toggle to avoid next-themes context requirement
@@ -36,13 +36,13 @@ describe("<Navbar />", () => {
   it("highlights active link for home route", () => {
     render(<Navbar />);
     const homeLinks = screen.getAllByRole("link", { name: "首页" });
-    // 首页链接 aria-current 为 page
     expect(homeLinks[0]).toHaveAttribute("aria-current", "page");
+    expect(homeLinks[0]).toHaveAttribute("href", "/home");
   });
 
   it("renders WeChat icon linking to contact section", () => {
     render(<Navbar />);
     const wechat = screen.getByRole("link", { name: "前往联系我 — 微信" });
-    expect(wechat).toHaveAttribute("href", "/#contact");
+    expect(wechat).toHaveAttribute("href", "/home#contact");
   });
 });
