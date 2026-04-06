@@ -1,15 +1,18 @@
-"use client";
-
 import { Suspense } from "react";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { notFound } from "next/navigation";
 
 import { StudentsManagementClient } from "./students-management-client";
 import { RequireAuth } from "@/components/require-auth";
 import { RequireRole } from "@/components/require-role";
 import { Role } from "@/lib/auth";
 
-export default function StudentsManagementPage() {
-  const t = useTranslations();
+export default async function StudentsManagementPage() {
+  if (process.env.NODE_ENV === "production") {
+    notFound();
+  }
+
+  const t = await getTranslations();
 
   return (
     <RequireAuth>
