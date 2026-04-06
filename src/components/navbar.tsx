@@ -39,7 +39,7 @@ export function Navbar() {
             className="h-7 w-7 shrink-0 rounded-full object-cover ring-1 ring-border"
           />
           <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-lg font-bold tracking-tight text-transparent">
-            方圆AI分享
+            方圆AI
           </span>
         </Link>
 

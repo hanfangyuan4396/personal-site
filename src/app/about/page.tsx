@@ -41,7 +41,7 @@ const skillCardStyle = {
 };
 
 export const metadata = {
-  title: "方圆AI分享",
+  title: "方圆AI",
   description: "方圆的个人简介、教育背景、技能与成就",
 };
 

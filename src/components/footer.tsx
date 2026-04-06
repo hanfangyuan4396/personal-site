@@ -16,7 +16,7 @@ export function Footer() {
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start md:gap-12 lg:gap-16">
           <div>
-            <p className="text-lg font-bold tracking-tight text-foreground">方圆</p>
+            <p className="text-lg font-bold tracking-tight text-foreground">方圆AI</p>
             <p className="mt-3 text-sm font-medium text-foreground">{footerRoleLabels.join(" · ")}</p>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
               智能体开发实践者，Dify-on-WeChat 开源项目作者。聚焦 AI 工程落地与开源协作。

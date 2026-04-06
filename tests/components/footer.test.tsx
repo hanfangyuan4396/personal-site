@@ -10,7 +10,7 @@ afterEach(() => {
 describe("<Footer />", () => {
   it("renders brand title", () => {
     render(<Footer />);
-    expect(screen.getByText("方圆", { exact: true })).toBeInTheDocument();
+    expect(screen.getByText("方圆AI", { exact: true })).toBeInTheDocument();
   });
 
   it("renders role labels", () => {

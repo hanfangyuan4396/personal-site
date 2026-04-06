@@ -20,7 +20,7 @@ afterEach(() => {
 describe("<Navbar />", () => {
   it("renders logo", () => {
     render(<Navbar />);
-    expect(screen.getByText("方圆AI分享")).toBeInTheDocument();
+    expect(screen.getByText("方圆AI")).toBeInTheDocument();
     expect(screen.getByAltText("wechat-avatar")).toBeInTheDocument();
   });
 

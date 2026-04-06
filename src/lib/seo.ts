@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 const fallbackSiteUrl = "https://hanfangyuan.cn";
 
-export const siteName = "方圆AI分享";
+export const siteName = "方圆AI";
 export const defaultOgImagePath = "/wechat_avatar.jpg";
 
 export function getSiteUrl(): URL {
