@@ -174,6 +174,27 @@ const faqs = [
   },
 ];
 
+const serviceCardClassName =
+  "rounded-lg border border-[oklch(0.84_0.018_105)] bg-[oklch(0.995_0.003_95/0.78)] p-6 shadow-[0_1px_0_rgba(255,255,255,0.7)] backdrop-blur-sm transition-all hover:border-[oklch(0.58_0.09_145/0.55)] hover:shadow-[0_16px_34px_rgba(45,60,43,0.1)] dark:border-white/10 dark:bg-white/[0.045] dark:shadow-none dark:hover:border-[oklch(0.74_0.12_155/0.45)] dark:hover:shadow-[0_18px_38px_rgba(0,0,0,0.24)]";
+
+const staticCardClassName =
+  "rounded-lg border border-[oklch(0.84_0.018_105)] bg-[oklch(0.995_0.003_95/0.78)] p-6 shadow-[0_1px_0_rgba(255,255,255,0.7)] backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.045] dark:shadow-none";
+
+const iconBoxClassName =
+  "flex h-11 w-11 items-center justify-center rounded-lg border border-[oklch(0.68_0.09_155/0.34)] bg-[oklch(0.94_0.035_150)] text-[oklch(0.38_0.11_155)] dark:border-[oklch(0.74_0.12_155/0.28)] dark:bg-[oklch(0.74_0.12_155/0.08)] dark:text-[oklch(0.78_0.12_155)]";
+
+const pillClassName =
+  "rounded-full border border-[oklch(0.66_0.09_155/0.36)] bg-[oklch(0.94_0.035_150)] px-3 py-1 text-xs font-medium tracking-wide text-[oklch(0.36_0.11_155)] dark:border-[oklch(0.74_0.12_155/0.28)] dark:bg-[oklch(0.74_0.12_155/0.08)] dark:text-[oklch(0.78_0.12_155)]";
+
+const bulletDotClassName =
+  "mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[oklch(0.72_0.14_78)] dark:bg-[oklch(0.82_0.13_78)]";
+
+const primaryButtonClassName =
+  "border-0 bg-[oklch(0.42_0.105_155)] text-white shadow-[0_14px_28px_oklch(0.42_0.105_155/0.22)] hover:bg-[oklch(0.47_0.115_155)] hover:shadow-[0_16px_32px_oklch(0.42_0.105_155/0.28)] dark:bg-[oklch(0.72_0.12_155)] dark:text-[oklch(0.15_0.012_110)] dark:hover:bg-[oklch(0.78_0.12_155)]";
+
+const outlineButtonClassName =
+  "border-[oklch(0.66_0.09_155/0.45)] bg-[oklch(0.995_0.003_95/0.72)] text-[oklch(0.36_0.11_155)] hover:border-[oklch(0.52_0.11_155)] hover:bg-[oklch(0.94_0.035_150)] hover:text-[oklch(0.3_0.1_155)] dark:border-[oklch(0.74_0.12_155/0.34)] dark:bg-transparent dark:text-[oklch(0.78_0.12_155)] dark:hover:border-[oklch(0.78_0.12_155/0.58)] dark:hover:bg-[oklch(0.74_0.12_155/0.1)] dark:hover:text-[oklch(0.86_0.11_155)]";
+
 export const metadata: Metadata = createMetadata({
   title: "AI 咨询、AI 智能体开发与企业 AI 落地服务",
   description:
@@ -211,15 +232,14 @@ export default function ServicesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
-      <section className="relative overflow-hidden py-20 sm:py-28">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(59,130,246,0.08),transparent)] dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(59,130,246,0.12),transparent)]" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-blue-50/40 dark:hidden" />
-        <div className="pointer-events-none absolute left-1/2 top-16 h-64 w-64 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl dark:bg-cyan-500/10" />
+      <section className="relative isolate overflow-hidden py-20 sm:py-28">
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,oklch(0.985_0.006_95),oklch(0.955_0.018_112)_48%,oklch(0.985_0.004_85))] dark:bg-[linear-gradient(135deg,oklch(0.145_0.012_110),oklch(0.18_0.018_125)_52%,oklch(0.13_0.01_95))]" />
+        <div className="pointer-events-none absolute inset-0 opacity-[0.3] [background-image:radial-gradient(oklch(0.42_0.045_115/0.22)_0.65px,transparent_0.65px)] [background-size:18px_18px] dark:opacity-[0.16] dark:[background-image:radial-gradient(oklch(0.88_0.025_110/0.26)_0.65px,transparent_0.65px)]" />
 
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6">
           <div className="flex flex-col gap-12 md:flex-row md:items-center md:justify-between md:gap-14">
             <div className="max-w-2xl">
-              <p className="text-sm font-medium tracking-[0.18em] text-blue-600/70 dark:text-blue-300/80">
+              <p className="text-sm font-medium tracking-[0.18em] text-[oklch(0.45_0.1_155)] dark:text-[oklch(0.76_0.11_155)]">
                 SERVICES
               </p>
               <h1 className="mt-3 max-w-[12ch] text-4xl font-bold tracking-tight sm:text-5xl lg:text-[4.25rem] lg:leading-[1.02]">
@@ -233,7 +253,7 @@ export default function ServicesPage() {
                 {heroSignals.map((signal) => (
                   <span
                     key={signal}
-                    className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-medium tracking-wide text-blue-700 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-200"
+                    className={pillClassName}
                   >
                     {signal}
                   </span>
@@ -243,7 +263,7 @@ export default function ServicesPage() {
                 <Button
                   asChild
                   size="lg"
-                  className="border-0 bg-blue-600 text-white shadow-[0_0_16px_rgba(59,130,246,0.25)] hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.35)]"
+                  className={primaryButtonClassName}
                 >
                   <Link href="/home#contact">
                     联系咨询 <ArrowRight className="ml-1 h-4 w-4" />
@@ -253,7 +273,7 @@ export default function ServicesPage() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-blue-300/60 bg-white/80 text-blue-700 hover:border-blue-400 hover:bg-blue-50 hover:text-blue-800 dark:border-blue-500/30 dark:bg-background/80 dark:text-foreground dark:hover:border-blue-400/60 dark:hover:bg-blue-500/10 dark:hover:text-blue-300"
+                  className={outlineButtonClassName}
                 >
                   <Link href="#zsxq-coupon">知识星球</Link>
                 </Button>
@@ -261,17 +281,15 @@ export default function ServicesPage() {
             </div>
 
             <div className="w-full max-w-md self-start">
-              <div className="relative overflow-hidden rounded-[28px] border border-blue-200/70 bg-gradient-to-br from-white via-blue-50/75 to-cyan-50/45 p-6 shadow-[0_10px_30px_rgba(59,130,246,0.08)] dark:border-blue-500/15 dark:from-blue-950/35 dark:via-background dark:to-cyan-950/20 dark:shadow-none">
-                <div className="pointer-events-none absolute inset-x-8 top-6 h-px bg-gradient-to-r from-transparent via-cyan-500/45 to-transparent dark:via-cyan-400/60" />
-                <div className="pointer-events-none absolute -right-10 top-10 h-32 w-32 rounded-full bg-cyan-400/12 blur-3xl dark:bg-cyan-500/15" />
-                <div className="pointer-events-none absolute -left-6 bottom-10 h-28 w-28 rounded-full bg-blue-400/12 blur-3xl dark:bg-blue-500/15" />
+              <div className="relative overflow-hidden rounded-lg border border-[oklch(0.84_0.018_105)] bg-[oklch(0.995_0.003_95/0.78)] p-6 shadow-[0_16px_34px_rgba(45,60,43,0.1)] backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.045] dark:shadow-[0_18px_38px_rgba(0,0,0,0.24)]">
+                <div className="pointer-events-none absolute inset-x-8 top-6 h-px bg-gradient-to-r from-transparent via-[oklch(0.72_0.14_78/0.42)] to-transparent" />
 
                 <div className="relative">
                   <div className="space-y-3">
                     {heroNotes.map((note) => (
                       <div
                         key={note.title}
-                        className="rounded-2xl border border-blue-200/70 bg-white/80 px-4 py-3 backdrop-blur-sm dark:border-blue-500/15 dark:bg-background/40"
+                        className="rounded-lg border border-[oklch(0.82_0.016_105)] bg-white/70 px-4 py-3 backdrop-blur-sm dark:border-white/10 dark:bg-background/40"
                       >
                         <p className="text-sm font-semibold text-foreground">{note.title}</p>
                         <p className="mt-1 text-sm text-muted-foreground">{note.description}</p>
@@ -283,10 +301,10 @@ export default function ServicesPage() {
                     {deliveryHighlights.map((item) => (
                       <div
                         key={item.label}
-                        className="rounded-2xl border border-blue-200/60 bg-white/70 px-3 py-3 text-center backdrop-blur-sm dark:border-blue-500/10 dark:bg-background/35"
+                        className="rounded-lg border border-[oklch(0.82_0.016_105)] bg-white/60 px-3 py-3 text-center backdrop-blur-sm dark:border-white/10 dark:bg-background/35"
                       >
                         <div
-                          className={`font-semibold text-blue-700 dark:text-blue-300 ${item.value.length > 8 ? "text-sm whitespace-nowrap" : "text-base"}`}
+                          className={`font-semibold text-[oklch(0.36_0.1_155)] dark:text-[oklch(0.78_0.12_155)] ${item.value.length > 8 ? "text-sm whitespace-nowrap" : "text-base"}`}
                         >
                           {item.value}
                         </div>
@@ -317,9 +335,9 @@ export default function ServicesPage() {
               return (
                 <div
                   key={service.title}
-                  className="rounded-2xl border border-border bg-card p-6 transition-all hover:border-blue-400/50 hover:shadow-[0_4px_20px_rgba(59,130,246,0.12)] dark:hover:border-blue-500/40 dark:hover:shadow-[0_0_24px_rgba(59,130,246,0.08)]"
+                  className={serviceCardClassName}
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-blue-200 bg-blue-50 text-blue-700 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-300">
+                  <div className={iconBoxClassName}>
                     <Icon className="h-5 w-5" />
                   </div>
                   <h3 className="mt-5 text-lg font-semibold">{service.title}</h3>
@@ -329,7 +347,7 @@ export default function ServicesPage() {
                   <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
                     {service.bullets.map((bullet) => (
                       <li key={bullet} className="flex gap-2">
-                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500 dark:bg-cyan-400" />
+                        <span className={bulletDotClassName} />
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -352,7 +370,7 @@ export default function ServicesPage() {
             {deliverables.map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-blue-200/70 bg-gradient-to-br from-white via-blue-50/45 to-cyan-50/20 p-6 shadow-[0_8px_24px_rgba(59,130,246,0.06)] dark:border-blue-500/20 dark:from-blue-950/20 dark:via-card dark:to-card dark:shadow-none"
+                className={staticCardClassName}
               >
                 <h3 className="text-lg font-semibold">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -375,7 +393,7 @@ export default function ServicesPage() {
             {trustSignals.map((signal) => (
               <div
                 key={signal.title}
-                className="rounded-2xl border border-blue-200/70 bg-gradient-to-br from-white via-blue-50/40 to-cyan-50/20 p-6 shadow-[0_8px_24px_rgba(59,130,246,0.06)] dark:border-blue-500/20 dark:from-blue-950/20 dark:via-card dark:to-card dark:shadow-none"
+                className={staticCardClassName}
               >
                 <h3 className="text-lg font-semibold">{signal.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -398,7 +416,7 @@ export default function ServicesPage() {
             {fitCustomers.map((customer) => (
               <div
                 key={customer.title}
-                className="rounded-2xl border border-blue-200/70 bg-gradient-to-br from-white via-blue-50/50 to-cyan-50/25 p-6 shadow-[0_8px_24px_rgba(59,130,246,0.06)] dark:border-blue-500/20 dark:from-blue-950/20 dark:via-card dark:to-card dark:shadow-none"
+                className={staticCardClassName}
               >
                 <h3 className="text-lg font-semibold">{customer.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -417,15 +435,15 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="rounded-[28px] border border-blue-200/70 bg-gradient-to-br from-white via-blue-50/75 to-cyan-50/30 p-6 shadow-[0_10px_30px_rgba(59,130,246,0.08)] sm:p-8 dark:border-blue-500/20 dark:from-blue-950/20 dark:via-card dark:to-card dark:shadow-none">
+          <div className="rounded-lg border border-[oklch(0.84_0.018_105)] bg-[oklch(0.995_0.003_95/0.78)] p-6 shadow-[0_16px_34px_rgba(45,60,43,0.08)] backdrop-blur-sm sm:p-8 dark:border-white/10 dark:bg-white/[0.045] dark:shadow-none">
             <ul className="grid grid-cols-1 gap-3 md:grid-cols-2">
               {problemScenarios.map((scenario) => (
                 <li
                   key={scenario}
-                  className="rounded-2xl border border-blue-200/60 bg-white/80 px-4 py-4 text-sm leading-relaxed text-muted-foreground dark:border-blue-500/15 dark:bg-background/50"
+                  className="rounded-lg border border-[oklch(0.82_0.016_105)] bg-white/70 px-4 py-4 text-sm leading-relaxed text-muted-foreground dark:border-white/10 dark:bg-background/50"
                 >
                   <span className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-cyan-500 dark:bg-cyan-400" />
+                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[oklch(0.72_0.14_78)] dark:bg-[oklch(0.82_0.13_78)]" />
                     <span>{scenario}</span>
                   </span>
                 </li>
@@ -435,7 +453,7 @@ export default function ServicesPage() {
         </section>
 
         <section id="zsxq-coupon" className="mt-16 scroll-mt-24 space-y-5">
-          <div className="rounded-[28px] border border-blue-200/70 bg-gradient-to-br from-white via-blue-50/80 to-cyan-50/45 p-6 shadow-[0_10px_30px_rgba(59,130,246,0.08)] sm:p-8 dark:border-blue-500/20 dark:from-blue-950/30 dark:via-card dark:to-cyan-950/20 dark:shadow-none">
+          <div className="rounded-lg border border-[oklch(0.84_0.018_105)] bg-[oklch(0.995_0.003_95/0.78)] p-6 shadow-[0_16px_34px_rgba(45,60,43,0.1)] backdrop-blur-sm sm:p-8 dark:border-white/10 dark:bg-white/[0.045] dark:shadow-none">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
                 <h2 className="text-2xl font-semibold sm:text-3xl">{knowledgePlanetOption.title}</h2>
@@ -448,12 +466,12 @@ export default function ServicesPage() {
                 <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
                   {knowledgePlanetOption.highlights.map((highlight) => (
                     <li key={highlight} className="flex gap-2">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500 dark:bg-cyan-400" />
+                      <span className={bulletDotClassName} />
                       <span>{highlight}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="mt-5 rounded-2xl border border-blue-200/70 bg-white/85 p-5 dark:border-blue-500/15 dark:bg-background/60">
+                <div className="mt-5 rounded-lg border border-[oklch(0.82_0.016_105)] bg-white/75 p-5 dark:border-white/10 dark:bg-background/60">
                   <p className="text-base font-semibold text-foreground">
                     {knowledgePlanetOption.qrCode?.title}
                   </p>
@@ -464,7 +482,7 @@ export default function ServicesPage() {
                 <Button
                   asChild
                   variant="outline"
-                  className="mt-6 border-blue-300/60 bg-white/80 text-blue-700 hover:border-blue-400 hover:bg-blue-50 hover:text-blue-800 dark:border-blue-500/30 dark:bg-transparent dark:text-foreground dark:hover:border-blue-400/60 dark:hover:text-blue-300"
+                  className={`mt-6 ${outlineButtonClassName}`}
                 >
                   <Link
                     href={knowledgePlanetOption.href}
@@ -478,7 +496,7 @@ export default function ServicesPage() {
               </div>
 
               <div className="mx-auto w-full max-w-[280px] shrink-0">
-                <div className="overflow-hidden rounded-[24px] border border-blue-200/80 bg-white p-3 shadow-[0_8px_24px_rgba(59,130,246,0.12)] dark:border-blue-500/20 dark:shadow-[0_0_24px_rgba(59,130,246,0.12)]">
+                <div className="overflow-hidden rounded-lg border border-[oklch(0.8_0.022_105)] bg-white p-3 shadow-[0_10px_22px_rgba(45,60,43,0.1)] dark:border-white/10 dark:shadow-none">
                   <Image
                     src={knowledgePlanetOption.qrCode!.src}
                     alt={knowledgePlanetOption.qrCode!.alt}
@@ -504,7 +522,7 @@ export default function ServicesPage() {
             {faqs.map((faq) => (
               <div
                 key={faq.question}
-                className="rounded-2xl border border-blue-200/70 bg-gradient-to-br from-white via-blue-50/45 to-cyan-50/20 p-6 shadow-[0_8px_24px_rgba(59,130,246,0.06)] dark:border-blue-500/20 dark:from-blue-950/20 dark:via-card dark:to-card dark:shadow-none"
+                className={staticCardClassName}
               >
                 <h3 className="text-lg font-semibold">{faq.question}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{faq.answer}</p>
@@ -514,7 +532,7 @@ export default function ServicesPage() {
         </section>
 
         <section className="mt-16">
-          <div className="rounded-[32px] border border-blue-200/70 bg-gradient-to-br from-white via-blue-50/80 to-cyan-50/35 px-6 py-10 shadow-[0_12px_32px_rgba(59,130,246,0.08)] sm:px-8 sm:py-12 dark:border-blue-500/20 dark:from-blue-950/25 dark:via-card dark:to-cyan-950/15 dark:shadow-none">
+          <div className="rounded-lg border border-[oklch(0.84_0.018_105)] bg-[oklch(0.995_0.003_95/0.78)] px-6 py-10 shadow-[0_16px_34px_rgba(45,60,43,0.1)] backdrop-blur-sm sm:px-8 sm:py-12 dark:border-white/10 dark:bg-white/[0.045] dark:shadow-none">
             <div className="max-w-3xl">
               <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
                 如果你希望把 AI 真正用到实际工作里，可以从这里开始
@@ -528,7 +546,7 @@ export default function ServicesPage() {
               <Button
                 asChild
                 size="lg"
-                className="border-0 bg-blue-600 text-white shadow-[0_0_16px_rgba(59,130,246,0.18)] hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.24)]"
+                className={primaryButtonClassName}
               >
                 <Link href="/home#contact">
                   联系咨询 <ArrowRight className="ml-1 h-4 w-4" />
@@ -538,7 +556,7 @@ export default function ServicesPage() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-blue-300/60 bg-white/80 text-blue-700 hover:border-blue-400 hover:bg-blue-50 hover:text-blue-800 dark:border-blue-500/30 dark:bg-background/60 dark:text-foreground dark:hover:border-blue-400/60 dark:hover:bg-blue-500/10 dark:hover:text-blue-300"
+                className={outlineButtonClassName}
               >
                 <Link href="#zsxq-coupon">加入知识星球</Link>
               </Button>

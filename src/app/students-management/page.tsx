@@ -17,8 +17,10 @@ export default async function StudentsManagementPage() {
   return (
     <RequireAuth>
       <RequireRole required={Role.Admin}>
-        <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6">
-          <h1 className="mb-4 text-xl font-semibold">{t("students.title")}</h1>
+        <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+          <div className="mb-5 rounded-lg border border-[oklch(0.84_0.018_105)] bg-[oklch(0.995_0.003_95/0.72)] px-5 py-4 shadow-[0_1px_0_rgba(255,255,255,0.7)] backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.045]">
+            <h1 className="text-xl font-semibold">{t("students.title")}</h1>
+          </div>
           <Suspense fallback={<div>{t("status.loading")}</div>}>
             <StudentsManagementClient />
           </Suspense>

@@ -4,9 +4,41 @@ import { wechatPersonalId } from "@/data/contact";
 
 const CARD_TAGS = ["智能体开发 / AI 技术顾问", "AI 编程 / AI 开源项目 3k+ Stars"];
 
-export function WechatCard() {
+type WechatCardProps = {
+  variant?: "default" | "home";
+};
+
+const cardClassNames = {
+  default:
+    "border-[oklch(0.84_0.018_105)] bg-[oklch(0.995_0.003_95/0.78)] shadow-[0_16px_34px_rgba(45,60,43,0.08)] backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.045] dark:bg-none dark:shadow-[0_18px_38px_rgba(0,0,0,0.2)]",
+  home:
+    "border-[oklch(0.84_0.018_105)] bg-[oklch(0.995_0.003_95/0.78)] shadow-[0_16px_34px_rgba(45,60,43,0.1)] backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.045] dark:bg-none dark:shadow-[0_18px_38px_rgba(0,0,0,0.24)]",
+};
+
+const avatarClassNames = {
+  default:
+    "border-[oklch(0.47_0.12_155/0.45)] shadow-[0_8px_22px_rgba(38,55,43,0.12)] dark:border-[oklch(0.74_0.12_155/0.36)] dark:shadow-none",
+  home:
+    "border-[oklch(0.47_0.12_155/0.5)] shadow-[0_8px_22px_rgba(38,55,43,0.14)] dark:border-[oklch(0.74_0.12_155/0.42)] dark:shadow-none",
+};
+
+const dividerClassNames = {
+  default: "border-[oklch(0.76_0.035_105/0.55)] dark:border-white/10",
+  home: "border-[oklch(0.76_0.035_105/0.55)] dark:border-white/10",
+};
+
+const qrClassNames = {
+  default:
+    "border-[oklch(0.8_0.022_105)] bg-white shadow-[0_10px_22px_rgba(45,60,43,0.08)] dark:border-white/10 dark:bg-white/[0.92] dark:shadow-none",
+  home:
+    "border-[oklch(0.8_0.022_105)] bg-white shadow-[0_10px_22px_rgba(45,60,43,0.1)] dark:border-white/10 dark:bg-white/[0.92] dark:shadow-none",
+};
+
+export function WechatCard({ variant = "default" }: WechatCardProps) {
   return (
-    <div className="flex w-full max-w-[680px] flex-col overflow-hidden rounded-2xl border border-blue-200/70 bg-gradient-to-br from-white via-blue-50/60 to-cyan-50/30 shadow-[0_10px_28px_rgba(59,130,246,0.08)] sm:flex-row sm:items-center dark:border-border dark:bg-card dark:bg-none dark:shadow-none">
+    <div
+      className={`flex w-full max-w-[680px] flex-col overflow-hidden rounded-lg border sm:flex-row sm:items-center ${cardClassNames[variant]}`}
+    >
       {/* 小屏：头像+文案一行；桌面：contents 拆成与二维码并列的两列 */}
       <div className="flex gap-4 px-4 pt-5 sm:contents sm:p-0">
         <div className="flex shrink-0 items-center justify-center sm:py-7 sm:pl-7 sm:pr-4">
@@ -15,12 +47,14 @@ export function WechatCard() {
             alt="方圆"
             width={120}
             height={120}
-            className="h-20 w-20 rounded-full border-2 border-blue-200 object-cover shadow-[0_4px_14px_rgba(59,130,246,0.12)] sm:h-[120px] sm:w-[120px] sm:border-[2.5px] dark:border-foreground/70 dark:shadow-none"
+            className={`h-20 w-20 rounded-full border-2 object-cover sm:h-[120px] sm:w-[120px] sm:border-[2.5px] ${avatarClassNames[variant]}`}
           />
         </div>
 
         <div className="min-w-0 flex-1 sm:px-5 sm:py-6">
-          <div className="mb-3 flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-blue-200/70 pb-3 sm:gap-4 dark:border-border">
+          <div
+            className={`mb-3 flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b pb-3 sm:gap-4 ${dividerClassNames[variant]}`}
+          >
             <span className="min-w-0 text-xl font-bold tracking-wide text-foreground sm:text-2xl">
               方圆AI分享
             </span>
@@ -38,7 +72,7 @@ export function WechatCard() {
       </div>
 
       <div className="flex flex-col items-center px-4 pb-5 pt-4 sm:shrink-0 sm:py-6 sm:pl-2 sm:pr-6 sm:pt-6">
-        <div className="overflow-hidden rounded-lg border border-blue-200/70 bg-white p-1.5 shadow-[0_8px_18px_rgba(59,130,246,0.1)] dark:border-transparent dark:shadow-none">
+        <div className={`overflow-hidden rounded-lg border p-1.5 ${qrClassNames[variant]}`}>
           <Image
             src="/wechat_qr.png"
             alt="微信二维码"

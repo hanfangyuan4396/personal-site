@@ -6,14 +6,17 @@ import { featuredProjects } from "@/data/projects";
 const homeProjects = featuredProjects.filter((p) => p.showOnHome !== false);
 
 const projectCardClassName =
-  "group relative flex flex-col rounded-xl border border-border bg-card p-6 transition-all hover:border-blue-400/50 hover:shadow-[0_4px_20px_rgba(59,130,246,0.12)] dark:hover:border-blue-500/40 dark:hover:shadow-[0_0_24px_rgba(59,130,246,0.08)]";
+  "group relative flex flex-col overflow-hidden rounded-lg border border-[oklch(0.84_0.018_105)] bg-[oklch(0.995_0.003_95/0.78)] p-6 shadow-[0_1px_0_rgba(255,255,255,0.7)] backdrop-blur-sm transition-all before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-[oklch(0.47_0.12_155)] before:opacity-0 before:transition-opacity hover:border-[oklch(0.58_0.09_145/0.55)] hover:shadow-[0_16px_34px_rgba(45,60,43,0.1)] hover:before:opacity-100 dark:border-white/10 dark:bg-white/[0.045] dark:shadow-none dark:hover:border-[oklch(0.74_0.12_155/0.45)] dark:hover:shadow-[0_18px_38px_rgba(0,0,0,0.26)]";
 
 const projectCardStretchLinkClassName =
-  "absolute inset-0 z-0 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+  "absolute inset-0 z-0 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.47_0.12_155/0.55)] focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="border-t border-blue-500/10 py-16 sm:py-24">
+    <section
+      id="projects"
+      className="border-t border-[oklch(0.72_0.045_100/0.14)] py-16 sm:py-24 dark:border-white/[0.06]"
+    >
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <div className="mb-12">
           <h2 className="text-2xl font-bold sm:text-3xl">精选项目</h2>
@@ -32,7 +35,7 @@ export function ProjectsSection() {
               >
                 <div className="mb-3 flex items-start justify-between gap-2">
                   <div>
-                    <span className="text-xs font-medium text-blue-600/80 dark:text-blue-400/80">
+                    <span className="text-xs font-medium text-[oklch(0.45_0.1_155)] dark:text-[oklch(0.76_0.11_155)]">
                       {project.category}
                     </span>
                     <h3 className="mt-0.5 font-semibold">{project.name}</h3>
@@ -45,7 +48,7 @@ export function ProjectsSection() {
                         href={project.links.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+                        className="text-muted-foreground transition-colors hover:text-[oklch(0.38_0.11_155)] dark:hover:text-[oklch(0.78_0.12_155)]"
                         aria-label="GitHub"
                       >
                         <Github className="h-4 w-4" />
@@ -56,7 +59,7 @@ export function ProjectsSection() {
                         href={project.links.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+                        className="text-muted-foreground transition-colors hover:text-[oklch(0.38_0.11_155)] dark:hover:text-[oklch(0.78_0.12_155)]"
                         aria-label="在线体验"
                       >
                         <ExternalLink className="h-4 w-4" />
@@ -67,7 +70,7 @@ export function ProjectsSection() {
                         href={project.links.paper}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+                        className="text-muted-foreground transition-colors hover:text-[oklch(0.38_0.11_155)] dark:hover:text-[oklch(0.78_0.12_155)]"
                         aria-label="论文（ScienceDirect）"
                       >
                         <BookOpen className="h-4 w-4" />
@@ -85,7 +88,7 @@ export function ProjectsSection() {
                     {project.highlights.map((h) => (
                       <span
                         key={h}
-                        className="rounded-md border border-blue-200 bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-300"
+                        className="rounded-md border border-[oklch(0.78_0.08_78/0.42)] bg-[oklch(0.96_0.035_82)] px-2 py-0.5 text-xs font-medium text-[oklch(0.43_0.08_78)] dark:border-[oklch(0.82_0.13_78/0.32)] dark:bg-[oklch(0.82_0.13_78/0.1)] dark:text-[oklch(0.84_0.13_78)]"
                       >
                         {h}
                       </span>
@@ -97,7 +100,7 @@ export function ProjectsSection() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-border px-2.5 py-0.5 text-xs text-muted-foreground transition-colors group-hover:border-blue-500/20"
+                      className="rounded-full border border-[oklch(0.82_0.016_105)] px-2.5 py-0.5 text-xs text-muted-foreground transition-colors group-hover:border-[oklch(0.47_0.12_155/0.25)] dark:border-white/10 dark:group-hover:border-[oklch(0.74_0.12_155/0.25)]"
                     >
                       {tag}
                     </span>
@@ -132,7 +135,7 @@ export function ProjectsSection() {
         <div className="mt-8 flex justify-center">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-1.5 rounded-full border border-blue-300/60 bg-blue-50 px-5 py-2 text-sm font-medium text-blue-700 transition-all hover:border-blue-400 hover:bg-blue-100 hover:text-blue-800 dark:border-blue-500/30 dark:bg-blue-500/10 dark:text-blue-300 dark:hover:border-blue-400/60 dark:hover:bg-blue-500/15 dark:hover:text-blue-200"
+            className="inline-flex items-center gap-1.5 rounded-full border border-[oklch(0.66_0.09_155/0.45)] bg-[oklch(0.94_0.035_150)] px-5 py-2 text-sm font-medium text-[oklch(0.36_0.11_155)] transition-all hover:border-[oklch(0.52_0.11_155)] hover:bg-[oklch(0.9_0.05_150)] hover:text-[oklch(0.3_0.1_155)] dark:border-[oklch(0.74_0.12_155/0.34)] dark:bg-[oklch(0.74_0.12_155/0.1)] dark:text-[oklch(0.78_0.12_155)] dark:hover:border-[oklch(0.78_0.12_155/0.58)] dark:hover:bg-[oklch(0.74_0.12_155/0.16)] dark:hover:text-[oklch(0.86_0.11_155)]"
           >
             了解详细项目 <ArrowRight className="h-3.5 w-3.5" />
           </Link>

@@ -4,10 +4,13 @@ import { BookOpen, ExternalLink, Github } from "lucide-react";
 import { featuredProjects } from "@/data/projects";
 
 const projectCardClassName =
-  "group relative flex flex-col rounded-xl border border-border bg-card p-6 transition-all hover:border-blue-400/50 hover:shadow-[0_4px_20px_rgba(59,130,246,0.12)] dark:hover:border-blue-500/40 dark:hover:shadow-[0_0_24px_rgba(59,130,246,0.08)]";
+  "group relative flex flex-col overflow-hidden rounded-lg border border-[oklch(0.84_0.018_105)] bg-[oklch(0.995_0.003_95/0.78)] p-6 shadow-[0_1px_0_rgba(255,255,255,0.7)] backdrop-blur-sm transition-all before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-[oklch(0.47_0.12_155)] before:opacity-0 before:transition-opacity hover:border-[oklch(0.58_0.09_145/0.55)] hover:shadow-[0_16px_34px_rgba(45,60,43,0.1)] hover:before:opacity-100 dark:border-white/10 dark:bg-white/[0.045] dark:shadow-none dark:hover:border-[oklch(0.74_0.12_155/0.45)] dark:hover:shadow-[0_18px_38px_rgba(0,0,0,0.26)]";
 
 const projectCardStretchLinkClassName =
-  "absolute inset-0 z-0 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+  "absolute inset-0 z-0 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.47_0.12_155/0.55)] focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+
+const projectIconLinkClassName =
+  "text-muted-foreground transition-colors hover:text-[oklch(0.38_0.11_155)] dark:hover:text-[oklch(0.78_0.12_155)]";
 
 export const metadata = {
   title: "方圆AI",
@@ -54,7 +57,7 @@ export default function ProjectsPage() {
                       href={project.links.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+                      className={projectIconLinkClassName}
                       aria-label="GitHub"
                     >
                       <Github className="h-4 w-4" />
@@ -65,7 +68,7 @@ export default function ProjectsPage() {
                       href={project.links.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+                      className={projectIconLinkClassName}
                       aria-label="在线体验"
                     >
                       <ExternalLink className="h-4 w-4" />
@@ -76,7 +79,7 @@ export default function ProjectsPage() {
                       href={project.links.paper}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+                      className={projectIconLinkClassName}
                       aria-label="论文（ScienceDirect）"
                     >
                       <BookOpen className="h-4 w-4" />
@@ -92,7 +95,7 @@ export default function ProjectsPage() {
                   {project.details.map((line, idx) => (
                     <li
                       key={`${project.id}-${idx}`}
-                      className="list-disc pl-4 marker:text-blue-400/70"
+                      className="list-disc pl-4 marker:text-[oklch(0.72_0.14_78/0.72)] dark:marker:text-[oklch(0.82_0.13_78/0.68)]"
                     >
                       {line}
                     </li>
@@ -105,7 +108,7 @@ export default function ProjectsPage() {
                   {project.highlights.map((h) => (
                     <span
                       key={h}
-                      className="rounded-md border border-blue-200 bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-300"
+                      className="rounded-md border border-[oklch(0.78_0.08_78/0.42)] bg-[oklch(0.96_0.035_82)] px-2 py-0.5 text-xs font-medium text-[oklch(0.43_0.08_78)] dark:border-[oklch(0.82_0.13_78/0.32)] dark:bg-[oklch(0.82_0.13_78/0.1)] dark:text-[oklch(0.84_0.13_78)]"
                     >
                       {h}
                     </span>
@@ -117,7 +120,7 @@ export default function ProjectsPage() {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-border px-2.5 py-0.5 text-xs text-muted-foreground transition-colors group-hover:border-blue-500/20"
+                    className="rounded-full border border-[oklch(0.82_0.016_105)] px-2.5 py-0.5 text-xs text-muted-foreground transition-colors group-hover:border-[oklch(0.47_0.12_155/0.25)] dark:border-white/10 dark:group-hover:border-[oklch(0.74_0.12_155/0.25)]"
                   >
                     {tag}
                   </span>

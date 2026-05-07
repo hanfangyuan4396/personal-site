@@ -144,7 +144,13 @@ export function CreateStudentDialog({ onCreated }: { onCreated?: () => void }) {
             )}
           />
 
-          <Button type="submit" disabled={submitting}>{t("students.form.submit")}</Button>
+          <Button
+            type="submit"
+            disabled={submitting}
+            className="bg-[oklch(0.42_0.105_155)] text-white hover:bg-[oklch(0.47_0.115_155)] dark:bg-[oklch(0.72_0.12_155)] dark:text-[oklch(0.15_0.012_110)] dark:hover:bg-[oklch(0.78_0.12_155)]"
+          >
+            {t("students.form.submit")}
+          </Button>
         </form>
       </Form>
     </div>

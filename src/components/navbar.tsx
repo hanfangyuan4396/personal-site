@@ -24,7 +24,7 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-blue-200/60 bg-white/85 shadow-[0_1px_8px_rgba(59,130,246,0.06)] backdrop-blur-md dark:border-blue-500/10 dark:bg-background/80 dark:shadow-none">
+    <header className="sticky top-0 z-50 border-b border-[oklch(0.76_0.035_105/0.45)] bg-[oklch(0.995_0.003_95/0.86)] shadow-[0_1px_10px_rgba(45,60,43,0.06)] backdrop-blur-md dark:border-white/10 dark:bg-background/82 dark:shadow-none">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link
           href="/home"
@@ -38,7 +38,7 @@ export function Navbar() {
             unoptimized
             className="h-7 w-7 shrink-0 rounded-full object-cover ring-1 ring-border"
           />
-          <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-lg font-bold tracking-tight text-transparent">
+          <span className="text-lg font-bold tracking-tight text-[oklch(0.36_0.1_155)] dark:text-[oklch(0.78_0.12_155)]">
             方圆AI
           </span>
         </Link>
@@ -55,8 +55,10 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "inline-flex items-center gap-1.5 transition-colors hover:text-blue-600 dark:hover:text-blue-400",
-                  isActive ? "text-blue-600 dark:text-blue-400" : "text-muted-foreground"
+                  "inline-flex items-center gap-1.5 transition-colors hover:text-[oklch(0.38_0.11_155)] dark:hover:text-[oklch(0.78_0.12_155)]",
+                  isActive
+                    ? "text-[oklch(0.38_0.11_155)] dark:text-[oklch(0.78_0.12_155)]"
+                    : "text-muted-foreground"
                 )}
                 aria-current={isActive ? "page" : undefined}
               >
@@ -70,14 +72,14 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <Link
             href="/home#contact"
-            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-card/80 text-muted-foreground transition-colors hover:border-blue-400/50 hover:text-blue-600 dark:hover:border-blue-500/40 dark:hover:text-blue-400"
+            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-card/80 text-muted-foreground transition-colors hover:border-[oklch(0.55_0.11_155/0.48)] hover:bg-[oklch(0.94_0.035_150)] hover:text-[oklch(0.38_0.11_155)] dark:hover:border-[oklch(0.74_0.12_155/0.36)] dark:hover:bg-[oklch(0.74_0.12_155/0.1)] dark:hover:text-[oklch(0.78_0.12_155)]"
             aria-label="前往联系我 — 微信"
           >
             <WechatIcon className="h-5 w-5" />
           </Link>
           <ThemeToggle />
           <button
-            className="rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-blue-500/10 dark:hover:text-blue-400 sm:hidden"
+            className="rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-[oklch(0.94_0.035_150)] hover:text-[oklch(0.38_0.11_155)] dark:hover:bg-[oklch(0.74_0.12_155/0.1)] dark:hover:text-[oklch(0.78_0.12_155)] sm:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="切换菜单"
           >
@@ -87,7 +89,7 @@ export function Navbar() {
       </div>
 
       {menuOpen && (
-        <nav className="border-t border-blue-200/60 px-4 py-3 sm:hidden dark:border-blue-500/10">
+        <nav className="border-t border-[oklch(0.76_0.035_105/0.45)] px-4 py-3 sm:hidden dark:border-white/10">
           {navLinks.map((link) => {
             const isActive =
               link.href === "/home"
@@ -99,8 +101,10 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "flex items-center gap-2 py-2 text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400",
-                  isActive ? "text-blue-600 dark:text-blue-400" : "text-muted-foreground"
+                  "flex items-center gap-2 py-2 text-sm font-medium transition-colors hover:text-[oklch(0.38_0.11_155)] dark:hover:text-[oklch(0.78_0.12_155)]",
+                  isActive
+                    ? "text-[oklch(0.38_0.11_155)] dark:text-[oklch(0.78_0.12_155)]"
+                    : "text-muted-foreground"
                 )}
                 onClick={() => setMenuOpen(false)}
               >

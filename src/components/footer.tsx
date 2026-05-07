@@ -4,7 +4,7 @@ import { ContactChannelIcon, ZsxqIcon } from "@/components/shared/contact-channe
 import { footerRoleLabels } from "@/data/home-hero";
 
 const footerContactIconLinkClass =
-  "inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-card/80 text-muted-foreground transition-colors hover:border-blue-400/50 hover:bg-blue-50/80 hover:text-blue-600 dark:hover:border-blue-500/40 dark:hover:bg-blue-500/10 dark:hover:text-blue-400";
+  "inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-card/80 text-muted-foreground transition-colors hover:border-[oklch(0.55_0.11_155/0.48)] hover:bg-[oklch(0.94_0.035_150)] hover:text-[oklch(0.38_0.11_155)] dark:hover:border-[oklch(0.74_0.12_155/0.36)] dark:hover:bg-[oklch(0.74_0.12_155/0.1)] dark:hover:text-[oklch(0.78_0.12_155)]";
 
 const ZSXQ_COUPON_SECTION = "/services#zsxq-coupon";
 
@@ -12,7 +12,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-blue-200/60 bg-gradient-to-b from-transparent to-blue-50/30 dark:border-blue-500/10 dark:bg-background">
+    <footer className="border-t border-[oklch(0.76_0.035_105/0.45)] bg-gradient-to-b from-transparent to-[oklch(0.955_0.018_112/0.75)] dark:border-white/10 dark:bg-background dark:bg-none">
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start md:gap-12 lg:gap-16">
           <div>
@@ -75,7 +75,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12">
-          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-center text-xs text-muted-foreground">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-center text-xs text-muted-foreground dark:text-[oklch(0.78_0.016_105)]">
             <span className="shrink-0">
               © {year} 方圆. All rights reserved. · Powered by Next.js
             </span>

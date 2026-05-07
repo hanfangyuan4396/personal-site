@@ -77,7 +77,7 @@ export function StudentsManagementClient() {
         <CreateStudentDialog onCreated={refresh} />
       </div>
 
-      <div className="rounded-md border">
+      <div className="overflow-hidden rounded-lg border border-[oklch(0.84_0.018_105)] bg-[oklch(0.995_0.003_95/0.72)] shadow-[0_1px_0_rgba(255,255,255,0.7)] backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.045]">
         <Table>
           <TableHeader>
             <TableRow>
@@ -136,7 +136,12 @@ export function StudentsManagementClient() {
       </div>
 
       <div className="flex items-center justify-end">
-        <Button variant="ghost" onClick={() => fetchData(page)} disabled={loading}>
+        <Button
+          variant="ghost"
+          onClick={() => fetchData(page)}
+          disabled={loading}
+          className="hover:bg-[oklch(0.94_0.035_150)] hover:text-[oklch(0.38_0.11_155)] dark:hover:bg-[oklch(0.74_0.12_155/0.1)] dark:hover:text-[oklch(0.78_0.12_155)]"
+        >
           {t("actions.refresh")}
         </Button>
       </div>

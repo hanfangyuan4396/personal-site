@@ -21,7 +21,10 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="border-t border-blue-500/10 py-16 sm:py-24">
+    <section
+      id="services"
+      className="border-t border-[oklch(0.72_0.045_100/0.14)] py-16 sm:py-24 dark:border-white/[0.06]"
+    >
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <div className="mb-12">
           <h2 className="text-2xl font-bold sm:text-3xl">我能提供的服务</h2>
@@ -34,9 +37,9 @@ export function ServicesSection() {
             return (
               <div
                 key={service.title}
-                className="rounded-2xl border border-border bg-card p-6 transition-all hover:border-blue-500/40 hover:shadow-[0_0_24px_rgba(59,130,246,0.08)]"
+                className="rounded-lg border border-[oklch(0.84_0.018_105)] bg-[oklch(0.995_0.003_95/0.78)] p-6 shadow-[0_1px_0_rgba(255,255,255,0.7)] backdrop-blur-sm transition-all hover:border-[oklch(0.58_0.09_145/0.55)] hover:shadow-[0_16px_34px_rgba(45,60,43,0.1)] dark:border-white/10 dark:bg-white/[0.045] dark:shadow-none dark:hover:border-[oklch(0.74_0.12_155/0.45)] dark:hover:shadow-[0_18px_38px_rgba(0,0,0,0.24)]"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-500/20 bg-blue-500/10 text-blue-300">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-[oklch(0.68_0.09_155/0.34)] bg-[oklch(0.94_0.035_150)] text-[oklch(0.38_0.11_155)] dark:border-[oklch(0.74_0.12_155/0.28)] dark:bg-[oklch(0.74_0.12_155/0.08)] dark:text-[oklch(0.78_0.12_155)]">
                   <Icon className="h-5 w-5" />
                 </div>
                 <h3 className="mt-4 font-semibold">{service.title}</h3>
@@ -51,7 +54,7 @@ export function ServicesSection() {
         <div className="mt-8 flex justify-center">
           <Link
             href="/services"
-            className="inline-flex items-center gap-1.5 rounded-full border border-blue-300/60 bg-blue-50 px-5 py-2 text-sm font-medium text-blue-700 transition-all hover:border-blue-400 hover:bg-blue-100 hover:text-blue-800 dark:border-blue-500/30 dark:bg-blue-500/10 dark:text-blue-300 dark:hover:border-blue-400/60 dark:hover:bg-blue-500/15 dark:hover:text-blue-200"
+            className="inline-flex items-center gap-1.5 rounded-full border border-[oklch(0.66_0.09_155/0.45)] bg-[oklch(0.94_0.035_150)] px-5 py-2 text-sm font-medium text-[oklch(0.36_0.11_155)] transition-all hover:border-[oklch(0.52_0.11_155)] hover:bg-[oklch(0.9_0.05_150)] hover:text-[oklch(0.3_0.1_155)] dark:border-[oklch(0.74_0.12_155/0.34)] dark:bg-[oklch(0.74_0.12_155/0.1)] dark:text-[oklch(0.78_0.12_155)] dark:hover:border-[oklch(0.78_0.12_155/0.58)] dark:hover:bg-[oklch(0.74_0.12_155/0.16)] dark:hover:text-[oklch(0.86_0.11_155)]"
           >
             了解详细服务内容 <ArrowRight className="h-3.5 w-3.5" />
           </Link>

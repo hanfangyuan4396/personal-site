@@ -24,7 +24,7 @@ describe("<StatsSection />", () => {
 
   it("renders stat icons container for each stat", () => {
     const { container } = render(<StatsSection />);
-    expect(container.querySelectorAll(".rounded-full.border.border-blue-500\\/20").length).toBe(4);
+    expect(container.querySelectorAll(".rounded-full.border").length).toBe(4);
   });
 
   it("embedded variant renders region and same stats", () => {

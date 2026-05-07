@@ -2,17 +2,17 @@ import { skillGroups } from "@/data/skills";
 
 const cardStyle = {
   wrapper:
-    "border-border bg-card hover:border-blue-400/50 hover:shadow-[0_4px_20px_rgba(59,130,246,0.12)] dark:hover:border-blue-500/40 dark:hover:shadow-[0_0_24px_rgba(59,130,246,0.08)]",
+    "border-[oklch(0.84_0.018_105)] bg-[oklch(0.995_0.003_95/0.76)] shadow-[0_1px_0_rgba(255,255,255,0.72)] backdrop-blur-sm hover:border-[oklch(0.58_0.09_145/0.55)] hover:shadow-[0_16px_34px_rgba(45,60,43,0.09)] dark:border-white/10 dark:bg-white/[0.045] dark:shadow-none dark:hover:border-[oklch(0.74_0.12_155/0.45)] dark:hover:shadow-[0_18px_38px_rgba(0,0,0,0.22)]",
   titleColor: "text-foreground",
   tagStyle:
-    "rounded-full border border-cyan-300/70 bg-cyan-50 text-cyan-700 dark:border-cyan-500/40 dark:bg-cyan-500/5 dark:text-cyan-400",
+    "rounded-full border border-[oklch(0.68_0.09_155/0.36)] bg-[oklch(0.94_0.035_150)] text-[oklch(0.37_0.1_155)] dark:border-[oklch(0.74_0.12_155/0.28)] dark:bg-[oklch(0.74_0.12_155/0.08)] dark:text-[oklch(0.78_0.12_155)]",
 };
 
 export function SkillsSection() {
   return (
     <section
       id="skills"
-      className="border-t border-blue-500/10 bg-gradient-to-b from-transparent to-blue-100/30 py-16 sm:py-24 dark:to-blue-950/10"
+      className="border-t border-[oklch(0.72_0.045_100/0.14)] py-16 sm:py-24 dark:border-white/[0.06]"
     >
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <div className="mb-12">
@@ -24,7 +24,7 @@ export function SkillsSection() {
           {skillGroups.map((group) => (
             <div
               key={group.title}
-              className={`rounded-xl border p-6 transition-all ${cardStyle.wrapper}`}
+              className={`rounded-lg border p-6 transition-all ${cardStyle.wrapper}`}
             >
               <h3 className={`mb-4 font-semibold ${cardStyle.titleColor}`}>{group.title}</h3>
               <div className="flex flex-wrap gap-2">

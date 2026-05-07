@@ -14,13 +14,13 @@ function StatsGrid() {
     <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
       {stats.map((stat) => (
         <div key={stat.label} className="flex flex-col items-center gap-1 text-center">
-          <div className="mb-1 flex h-10 w-10 items-center justify-center rounded-full border border-blue-500/20 bg-blue-500/10 text-blue-300">
+          <div className="mb-1 flex h-10 w-10 items-center justify-center rounded-full border border-[oklch(0.68_0.09_155/0.34)] bg-[oklch(0.94_0.035_150)] text-[oklch(0.38_0.11_155)] dark:border-[oklch(0.74_0.12_155/0.28)] dark:bg-[oklch(0.74_0.12_155/0.08)] dark:text-[oklch(0.78_0.12_155)]">
             {(() => {
               const Icon = statIcons[stat.icon];
               return <Icon className="h-4 w-4" aria-hidden="true" />;
             })()}
           </div>
-          <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl">
+          <span className="text-3xl font-bold text-[oklch(0.36_0.1_155)] sm:text-4xl dark:text-[oklch(0.78_0.12_155)]">
             {stat.value}
           </span>
           <span className="text-sm text-muted-foreground">{stat.label}</span>
@@ -38,8 +38,11 @@ function StatsGridEmbedded() {
         return (
           <div key={stat.label} className="min-w-0 text-left">
             <div className="flex items-baseline gap-2">
-              <Icon className="h-3.5 w-3.5 shrink-0 text-muted-foreground/45" aria-hidden="true" />
-              <span className="text-2xl font-semibold tabular-nums tracking-tight text-foreground sm:text-[1.65rem]">
+              <Icon
+                className="h-3.5 w-3.5 shrink-0 text-[oklch(0.56_0.1_155)] dark:text-[oklch(0.74_0.11_155)]"
+                aria-hidden="true"
+              />
+              <span className="text-2xl font-semibold tabular-nums tracking-normal text-[oklch(0.24_0.025_120)] sm:text-[1.65rem] dark:text-[oklch(0.9_0.018_110)]">
                 {stat.value}
               </span>
             </div>
@@ -61,7 +64,7 @@ export function StatsSection({ variant = "default" }: StatsSectionProps) {
   if (variant === "embedded") {
     return (
       <div
-        className="mt-6 w-full border-t border-blue-500/10 pt-5 md:mt-7"
+        className="mt-6 w-full border-t border-[oklch(0.72_0.045_100/0.32)] pt-5 md:mt-7 dark:border-white/10"
         role="region"
         aria-label="数据概览"
       >
@@ -71,7 +74,7 @@ export function StatsSection({ variant = "default" }: StatsSectionProps) {
   }
 
   return (
-    <section className="border-y border-blue-500/10 bg-gradient-to-r from-blue-950/40 via-card/60 to-cyan-950/30">
+    <section className="border-y border-[oklch(0.72_0.045_100/0.14)] dark:border-white/[0.06]">
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
         <StatsGrid />
       </div>

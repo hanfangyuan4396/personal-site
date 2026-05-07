@@ -13,7 +13,7 @@ export default function HomePage() {
       <SkillsSection />
       <TimelineSection />
       <ServicesSection />
-      <ContactSection />
+      <ContactSection variant="home" />
     </>
   );
 }

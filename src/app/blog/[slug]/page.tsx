@@ -50,7 +50,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           variant="ghost"
           size="sm"
           asChild
-          className="-ml-2 mb-6 text-muted-foreground hover:text-foreground"
+          className="-ml-2 mb-6 text-muted-foreground hover:bg-[oklch(0.94_0.035_150)] hover:text-[oklch(0.38_0.11_155)] dark:hover:bg-[oklch(0.74_0.12_155/0.1)] dark:hover:text-[oklch(0.78_0.12_155)]"
         >
           <Link href="/blog">
             <ArrowLeft className="mr-1 h-4 w-4" />
@@ -62,7 +62,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <p className="mt-4 leading-relaxed text-muted-foreground">{post.intro}</p>
       </div>
 
-      <article className="space-y-12 border-t border-border pt-10">
+      <article className="space-y-12 border-t border-[oklch(0.72_0.045_100/0.18)] pt-10 dark:border-white/[0.08]">
         {post.sections.map((section) => (
           <section key={section.heading}>
             <h2 className="text-xl font-semibold text-foreground sm:text-2xl">{section.heading}</h2>
