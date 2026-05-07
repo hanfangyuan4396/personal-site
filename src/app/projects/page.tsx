@@ -25,9 +25,6 @@ export default function ProjectsPage() {
     <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24">
       <div className="mb-14">
         <h1 className="text-3xl font-bold sm:text-4xl">项目经历</h1>
-        <p className="mt-3 text-muted-foreground">
-          按简历与真实交付整理：每条项目在下方展开职责、模块与效果，便于与首页「精选」对照阅读
-        </p>
       </div>
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
